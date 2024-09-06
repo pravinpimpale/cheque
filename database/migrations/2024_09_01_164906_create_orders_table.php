@@ -23,10 +23,15 @@ return new class extends Migration
             $table->string('account_number')->nullable();
             $table->string('confirm_account_number')->nullable();
             $table->string('cheque_start_number')->nullable();
+            $table->string('cheque_end_number')->nullable();
             $table->integer('cart_quantity')->nullable();
             $table->unsignedBigInteger('cheque_category_id')->nullable();
             $table->string('voided_cheque_file')->nullable()->nullable();
             $table->string('company_logo')->nullable();
+            $table->string('vendor_id')->nullable();
+            $table->string('cheque_img')->nullable();
+            $table->string('order_status')->nullable();
+            $table->string('balance_status')->nullable();
             $table->timestamps();
 
             // Foreign keys

@@ -110,25 +110,28 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'customer_id' => 'required|exists:customers,id',
-        //     'quantity' => 'required|integer',
-        //     'color' => 'required|string',
-        //     'company_info' => 'required|string',
-        //     'voided_cheque' => 'nullable|string',
-        //     'institution_number' => 'required|string',
-        //     'transit_number' => 'required|string',
-        //     'account_number' => 'required|string',
-        //     'confirm_account_number' => 'required|string|same:account_number',
-        //     'cheque_start_number' => 'required|string',
-        //     'cart_quantity' => 'required|integer',
-        //     'cheque_category_id' => 'required|exists:cheque_categories,id',
-        //     'voided_cheque_file' => 'nullable|file|mimes:jpeg,png,pdf',
-        //     'company_logo' => 'nullable|file|mimes:jpeg,png',
-        // ]);
+        // Validate the request data
+        $request->validate([
+            'customer_id' => 'required|integer',
+            'quantity' => 'required|integer|min:1',
+            'color' => 'required|string|max:255',
+            'company_info' => 'nullable|string|max:1000',
+            'voided_cheque_file' => 'nullable', // 2MB max file size
+            'institution_number' => 'nullable|string|max:20',
+            'transit_number' => 'nullable|string|max:20',
+            'account_number' => 'nullable|string|max:20',
+            'confirm_account_number' => 'nullable|string|same:account_number',
+            'cheque_start_number' => 'nullable|integer|min:1',
+            'cart_quantity' => 'required|integer|min:1',
+            'cheque_category_id' => 'required|integer',
+            'company_logo' => 'nullable', // 2MB max file size
+            'cheque_img' => 'nullable' // 2MB max file size
+        ]);
 
+        // Create a new Order object with validated data
         $order = new Order($request->all());
 
+        // Handle file uploads for 'voided_cheque_file', 'company_logo', and 'cheque_img'
         if ($request->hasFile('voided_cheque_file')) {
             $order->voided_cheque_file = $request->file('voided_cheque_file')->store('uploads');
         }
@@ -137,10 +140,21 @@ class OrderController extends Controller
             $order->company_logo = $request->file('company_logo')->store('logos');
         }
 
-        $order->save();
-        return view('layouts/success');
+        if ($request->hasFile('cheque_img')) {
+            $order->cheque_img = $request->file('cheque_img')->store('cheque_img');
+        }
 
+        // Set default values for order_status and balance_status
+        $order->order_status = 'pending'; // Default order status
+        $order->balance_status = 'pending'; // Default balance status
+
+        // Save the order to the database
+        $order->save();
+
+        // Redirect to the success view
+        return view('layouts/success');
     }
+
 
     /**
      * Display the specified resource.

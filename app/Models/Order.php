@@ -20,9 +20,14 @@ class Order extends Model
         'account_number',
         'confirm_account_number',
         'cheque_start_number',
+        'cheque_end_number',
         'cart_quantity',
         'cheque_category_id',
         'voided_cheque_file',
         'company_logo',
+        'vendor_id',
+        'cheque_img',
+        'order_status',
+        'balance_status',
     ];
 }
