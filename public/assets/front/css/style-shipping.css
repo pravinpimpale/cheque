@@ -1,0 +1,1232 @@
+.banner-section {
+  background: url('../images/shipping-Images/banner-img.jpg');
+  width: 100%;
+  float: left;
+  min-height: 470px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.banner-font h1 {
+  text-transform: unset;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+.banner-font h4 {
+  font-size: 18px;
+  color: #484848;
+  text-transform: unset;
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+.banner-font {
+  padding: 170px 0 0;
+}
+.cheque-catagories {
+  float: left;
+  width: 100%;
+  margin-top: 50px;
+}
+.cheque-class .nav li {
+  margin-right: 3px;
+  position: relative;
+  margin-left: 24px;
+  margin-bottom: -2px;
+}
+/* .cheque-class .nav li.active::before {
+	position: absolute;
+	content: "";
+	background-image: url(../images/personal-cheque-left.png);
+	width: 50px;
+	height: 64px;
+	left: -24px;
+	z-index:99;
+}
+.cheque-class .nav li.active::after {
+	position: absolute;
+	content: "";
+	background-image: url(../images/personal-cheque-right.png);
+	right: -24px;
+	width: 50px;
+	height: 64px;
+	z-index:99;
+} */
+.cheque-class .nav li::after {
+  position: absolute;
+  content: '';
+  background-image: url(../images/business-cheque-right.png);
+  right: -24px;
+  width: 50px;
+  height: 64px;
+}
+.cheque-class .nav li#personal-cheque::after {
+  position: absolute;
+  content: '';
+  background-image: url(../images/personal-cheque-right.png);
+  right: -24px;
+  width: 50px;
+  height: 64px;
+}
+.cheque-class .nav li::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/business-cheque-left.png);
+  width: 50px;
+  height: 64px;
+  left: -24px;
+}
+.cheque-class .nav li#personal-cheque::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/personal-cheque-left.png);
+  width: 50px;
+  height: 64px;
+  left: -24px;
+}
+
+.cheque-class .nav li#personal-cheque a {
+  background: #75c229;
+  border-radius: 0;
+  border-color: #75c229;
+}
+.cheque-class .nav li#business-cheque a {
+  background: #2d5985;
+  border-radius: 0;
+  border-color: #2d5985;
+}
+/*.cheque-class .nav li#personal-cheque a, .cheque-class .nav li#business-cheque a {
+	color: #ffffff;
+	font-family: 'Open Sans',sans-serif;
+	font-weight: 700;
+	padding: 0;
+	float: left;
+}*/
+.cheque-class .nav li#personal-cheque a,
+.cheque-class .nav li#business-cheque a {
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  padding: 0;
+  float: left;
+  margin: 0;
+}
+#personal-cheque a span {
+  background: #6db724;
+  float: left;
+  text-align: center;
+  padding: 16px 23px;
+}
+#business-cheque a span {
+  background: #264f78;
+  float: left;
+  text-align: center;
+  padding: 16px 23px;
+}
+#business-cheques .turnarround-bottom-right.last::after {
+  display: none;
+}
+.cheque-class .nav li#personal-cheque a p,
+.cheque-class .nav li#business-cheque a p {
+  font-size: 24px;
+  float: left;
+  padding: 20px 14px;
+  margin: 0;
+}
+/* .process-time-box-img img {
+    max-width: 100px;
+    width: 100%;
+} */
+.cheque-class .nav li#personal-cheque a span img,
+.cheque-class .nav li#business-cheque a span img {
+  margin: 0px;
+  padding: 0px;
+}
+.cheque-class .nav li#personal-cheque a img,
+.cheque-class .nav li#business-cheque a img {
+  margin-right: 10px;
+  padding: 19px 10px;
+}
+#personal-cheques {
+  padding: 30px 30px 20px;
+  border: 1px solid #75c229;
+  float: left;
+  width: 100%;
+}
+#business-cheques {
+  padding: 30px 30px 20px;
+  border: 1px solid #2d5985;
+  float: left;
+  width: 100%;
+}
+.tab-content p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  color: #484848;
+}
+.free-ship-country h3 {
+  font-size: 30px;
+  color: #2d5985;
+  font-weight: 700;
+}
+.free-ship-country h5 {
+  color: #484848;
+  font-size: 18px;
+}
+.free-ship-country p {
+  color: #484848;
+  font-size: 14px;
+}
+.shipping-fee > h3,
+.turn-arround > h3 {
+  background: #75c229;
+  font-size: 24px;
+  padding: 10px 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 700;
+}
+#business-cheques .shipping-fee > h3,
+#business-cheques .turn-arround > h3 {
+  background: #2d5985;
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.shipping-fees-details {
+  background: url(../images/shipping-Images/tabbing-bg.jpg);
+  width: 100%;
+  float: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 50px;
+  margin-bottom: 30px;
+}
+.shipping-fees-details .count_flag {
+  text-align: center;
+}
+.free-ship-country {
+  margin-top: 80px;
+}
+.shipping-fee,
+.turn-arround {
+  float: left;
+  width: 100%;
+}
+.turn-arround-inner .turn-arround-box {
+  text-align: center;
+  background: url(../images/shipping-Images/box-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.turn-arround-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d5985;
+  font-weight: 'Open Sans', sans-serif;
+  margin-top: 25px;
+}
+.business-day p {
+  color: #75c229;
+  font-weight: 700;
+  font-size: 11pt;
+  line-height: 21px;
+}
+
+.business-day {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+}
+.process-time-box {
+  position: relative;
+  width: 118px;
+  margin: 0 auto;
+  display: table;
+  height: 145px;
+}
+.business-day p {
+  color: #75c229;
+  font-weight: 700;
+  font-size: 11pt;
+  padding: 10px;
+  text-transform: uppercase;
+}
+.business-day span {
+  display: block;
+  font-size: 12pt;
+  font-weight: 700;
+}
+.business-days p {
+  color: #484848;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+.third-box .process-time-box img {
+  max-width: 89px;
+}
+.business-days p img {
+  margin-right: 10px;
+}
+.business-days {
+  margin-top: 23px;
+  margin-bottom: 23px;
+}
+/*.cheque-class .nav li.active {
+    box-shadow: rgba(0,0,0,.117647) 0 1px 6px, rgba(2, 2, 2, 0.117647) 0 1px 4px;
+}*/
+.cheque-class .nav li.active {
+  box-shadow: 0 0 11px gray;
+}
+.ship-fee-box img {
+  max-width: 100%;
+}
+.turnarround-bottom {
+  float: left;
+  width: 100%;
+  margin-top: -21px;
+  margin-bottom: 20px;
+}
+.turnarround-bottom-left {
+  float: left;
+  width: 40%;
+  position: relative;
+}
+.turnarround-bottom-left::after,
+#business-cheques .turnarround-bottom-right::after {
+  position: absolute;
+  content: '';
+  background: url(../images/shipping-Images/divider-img.jpg);
+  width: 9px;
+  height: 70px;
+  right: 0;
+  top: 10px;
+}
+.turnarround-bottom-right {
+  float: left;
+  width: 60%;
+}
+.turnarround-bottom p {
+  margin: 0;
+}
+#shippinginfoBody\ french .turnarround-bottom-left .turn-heading,
+#shippinginfoBody\ french .turnarround-bottom-right .turn-heading {
+  min-height: 44px;
+}
+.turnarround-bottom-left .turn-heading,
+.turnarround-bottom-right .turn-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #484848;
+  text-transform: uppercase;
+}
+.turnarround-bottom span {
+  font-size: 24px;
+  color: #75c229;
+  font-weight: 700;
+}
+.turnarround-bottom p {
+  font-size: 11px;
+  color: #75c229;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.process-time-box-img {
+  display: table-cell;
+  vertical-align: top;
+}
+.turn-arround-box.first-box,
+.turn-arround-box.second-box {
+  position: relative;
+}
+.turn-arround-box.first-box::after {
+  position: absolute;
+  content: '+';
+  right: -23px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  color: #75c229;
+  font-size: 26px;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 13px #d8dbdf;
+  z-index: 9;
+  padding: 10px;
+}
+.turn-arround_new .business-days {
+  margin-top: 42px;
+  margin-bottom: 46px;
+}
+#shippinginfoBody\ english .turn-arround_new .business-days {
+  margin-top: 32px;
+  margin-bottom: 33px;
+}
+.turn-arround-box.second-box::after {
+  position: absolute;
+  content: '=';
+  right: -23px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  color: #75c229;
+  font-size: 26px;
+  width: 46px;
+  height: 46px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 13px #d8dbdf;
+  z-index: 9;
+  padding: 10px;
+}
+.tab-out-text {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+#personal-cheques > p,
+#business-cheques > p {
+  margin-bottom: 22px;
+}
+
+#business-cheques .turnarround-bottom-left,
+#business-cheques .turnarround-bottom-right {
+  float: left;
+  width: 33.3%;
+  position: relative;
+  padding: 0 10px;
+}
+#business-cheques .turnarround-bottom {
+  margin-top: 0;
+  margin-bottom: 19px;
+}
+#business-cheques .turnarround-bottom-left::after {
+  right: -5px;
+}
+#business-cheques .shipping-fees-details {
+  background: none;
+  padding: 0;
+}
+.ship-fee-box h4 {
+  font-size: 16px;
+  text-align: center;
+  color: #2d5985;
+  font-weight: 600;
+  max-width: 150px;
+  margin: 0 auto;
+  min-height: 41px;
+}
+.ship-fee-box .business-day p {
+  font-size: 12pt;
+  font-weight: 700;
+  padding: 10px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.ship-fee-box .business-day {
+  top: 63px;
+}
+.ship-fee-box:first-child .business-day p {
+  font-size: 30px;
+}
+.ship-fee-box:nth-child(2) .business-day p {
+  font-size: 12px;
+  font-weight: 700;
+}
+.ship-fee-box:nth-child(2) .business-day p span {
+  font-size: 30px;
+  font-weight: 700;
+}
+/* .cheque-class .nav li.active a span {background:#6db724 !important}
+.cheque-class .nav li.active a {
+        background: #75c229 !important;
+    border-radius: 0 !important;
+    border-color: #75c229 !important;
+} */
+#business-cheques .turnarround-bottom-left .turnarround-bottom-left-inner,
+#business-cheques .turnarround-bottom-right .turnarround-bottom-left-inner {
+  display: table-cell;
+  vertical-align: bottom;
+}
+#business-cheques .turnarround-bottom-left,
+#business-cheques .turnarround-bottom-right {
+  height: 91px;
+  display: table;
+}
+.returns-funds {
+  float: left;
+  width: 100%;
+  padding-top: 66px;
+}
+.returns-funds h2 {
+  font-size: 32px;
+  text-align: center;
+  text-transform: unset;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+.returns-funds ul {
+  list-style: none;
+}
+.returns-funds ul li {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-bottom: 25px;
+  padding-left: 35px;
+  padding-right: 30px;
+}
+.returns-funds ul li::before {
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  content: '';
+  background: url(../images/shipping-Images/check-mark.png);
+  width: 22px;
+  height: 21px;
+}
+.returns-funds ul li:nth-child(3),
+.returns-funds ul li:last-child {
+  clear: left;
+}
+.returns-funds-bottom {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.faq-section {
+  float: left;
+  width: 100%;
+  background: #2d5985;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+.faq-section h2 {
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+#accordion .panel-default {
+  border: 2px solid #ffffff;
+  background: transparent;
+  color: #fff;
+  border-radius: 0;
+  margin-bottom: 10px;
+  clear: both;
+}
+#accordion .panel-heading {
+  background: transparent;
+  color: #fff;
+  font-weight: 900;
+  border-color: #ffffff;
+  font-weight: 700;
+  padding: 0;
+  clear: both;
+}
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top: none;
+}
+.faq-content p {
+  color: #fff;
+}
+#accordion {
+  float: left;
+  width: 100%;
+}
+.faq-content {
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.bottom {
+  background: #f4f4f5;
+  float: left;
+  width: 100%;
+  position: relative;
+}
+.message-bottom-left img {
+  position: absolute;
+  left: 0;
+  top: 120px;
+}
+.message-bottom h2 {
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+.message-bottom {
+  padding: 160px 0 100px;
+}
+.message-bottom p {
+  font-size: 18px;
+  color: #484848;
+  margin-bottom: 25px;
+}
+.bottom input {
+  background: #75c229;
+  border: 1px solid #75c229;
+  padding: 5px 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+  min-width: 228px;
+  text-shadow: 0 0 5px gray;
+  box-shadow: 0px 0px 9px lightgray;
+}
+#business-cheques .shipping-fees-details .ship-fee-box {
+  background: url(../images/shipping-Images/box-bg.png);
+  padding: 25px 0 55px;
+  background-size: 100% auto;
+}
+#shippinginfoBody\ english .more-less,
+#shippinginfoBody\ french .more-less {
+  float: right;
+  color: #2d5985;
+  font-size: 42px;
+  background: #fff;
+  width: 47px;
+  height: 47px;
+  text-align: center;
+  padding: 3px 4px;
+  top: 0;
+  position: absolute;
+  right: 0;
+  font-weight: 900;
+}
+#accordion .panel-heading .panel-title a {
+  padding: 12px 15px;
+  display: block;
+  line-height: normal;
+  margin: 0;
+  position: relative;
+}
+#accordion .panel-title {
+  text-transform: unset;
+}
+#shippinginfoBody\ english .logo-sec,
+#shippinginfoBody\ french .logo-sec {
+  background-color: #636b74;
+  display: inline-block;
+  width: 100%;
+  padding: 40px 0px 20px;
+}
+
+#shippinginfoBody\ french .banner-font h1 {
+  font-size: 33px;
+}
+#shippinginfoBody\ french .ship-fee-box:first-child .business-day p {
+  font-size: 20px;
+}
+#shippinginfoBody\ french .ship-fee-box:nth-child(2) .business-day p {
+  font-size: 11px;
+  padding-top: 0;
+}
+#shippinginfoBody\ french .ship-fee-box:nth-child(2) .business-day p span {
+  font-size: 24px;
+}
+#shippinginfoBody\ french .ship-fee-box:nth-child(3) .business-day p {
+  font-size: 10px;
+  padding: 0px 10px;
+}
+
+/*-- 09-05-2018 --*/
+.turn-arround-box.third-box .turnarround-bottom {
+  margin-bottom: 20px;
+}
+#shippinginfoBody\ english .turn-arround-box.third-box .turnarround-bottom {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+#shippinginfoBody\ english .turnarround-bottom {
+  margin-top: 0;
+}
+#shippinginfoBody\ english .turn-arround .turn-arround-inner .turnarround-bottom {
+  margin-bottom: 0;
+}
+#shippinginfoBody\ english .turn-arround.turn-arround_new .turn-arround-inner .turnarround-bottom {
+  margin-bottom: 19px;
+}
+#shippinginfoBody\ english .business-days {
+  min-height: 45px;
+}
+#shippinginfoBody\ english .turnarround-bottom {
+  min-height: 91px;
+}
+.returns-funds ul.pull-left {
+  float: left;
+  width: 50%;
+  padding-right: 30px;
+}
+.returns-funds ul.pull-right {
+  float: right;
+  width: 50%;
+}
+.cheque-class .nav li.active::after {
+  z-index: 9;
+}
+.cheque-class .nav li.active::before {
+  z-index: 9;
+}
+/*-- 09-05-2018 --*/
+
+#shippinginfoBody\ english .mid-content,
+#shippinginfoBody\ french .mid-content {
+  min-height: 0;
+  padding: 0;
+}
+
+/*****Responsive****/
+
+@media only screen and (max-width: 1199px) {
+  #shippinginfoBody\ french .banner-font h1 {
+    font-size: 24px;
+  }
+  #shippinginfoBody\ french .business-days p {
+    font-size: 11px;
+  }
+  .banner-section {
+    min-height: 300px;
+  }
+  .banner-font {
+    padding: 110px 0 0;
+  }
+  .banner-font h1 {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+  .cheque-class .nav li#personal-cheque a p,
+  .cheque-class .nav li#business-cheque a p {
+    font-size: 20px;
+  }
+  .business-days p {
+    font-size: 13px;
+  }
+  .turnarround-bottom-left .turn-heading,
+  .turnarround-bottom-right .turn-heading {
+    font-size: 12px;
+  }
+  #business-cheques .turnarround-bottom-left,
+  #business-cheques .turnarround-bottom-right {
+    padding: 0 5px;
+  }
+  .turnarround-bottom p {
+    font-size: 10px;
+  }
+  .message-bottom p {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+}
+@media only screen and (max-width: 991px) {
+  .banner-font h1 {
+    margin-bottom: 14px;
+    font-size: 32px;
+  }
+  .cheque-class .nav li.active::before,
+  .cheque-class .nav li.active::after,
+  .cheque-class .nav li::before,
+  .cheque-class .nav li::after,
+  .cheque-class .nav li#personal-cheque::before,
+  .cheque-class .nav li#personal-cheque::after {
+    height: 55px;
+  }
+  #personal-cheque a span,
+  #business-cheque a span {
+    padding: 12px 15px;
+  }
+
+  .cheque-class .nav li#personal-cheque a p,
+  .cheque-class .nav li#business-cheque a p {
+    font-size: 16px;
+    padding: 16px 10px;
+  }
+  .cheque-class .nav li#personal-cheque a img,
+  .cheque-class .nav li#business-cheque a img {
+    margin-right: 10px;
+    padding: 14px 10px;
+  }
+  .count_flag img {
+    width: 100%;
+  }
+  .free-ship-country {
+    margin-top: 10px;
+  }
+  .free-ship-country h3 {
+    font-size: 24px;
+  }
+  .free-ship-country h5 {
+    font-size: 15px;
+  }
+  .business-day p {
+    font-size: 11pt;
+  }
+  .turnarround-bottom-left .turn-heading,
+  .turnarround-bottom-right .turn-heading {
+    font-size: 11px;
+  }
+  .turnarround-bottom-left::after {
+    width: 5px;
+    height: 50px;
+    right: -10px;
+    top: 22px;
+  }
+  .message-bottom {
+    padding: 90px 0 80px;
+  }
+  .message-bottom-left img {
+    max-width: 370px;
+  }
+  #business-cheques .turn-arround-box {
+    padding: 0 5px;
+  }
+  #business-cheques .turnarround-bottom-left,
+  #business-cheques .turnarround-bottom-right {
+    height: 108px;
+  }
+  #shippinginfoBody\ english .turn-arround-box.third-box .turnarround-bottom {
+    margin-bottom: 15px;
+  }
+  #shippinginfoBody\ french .business-days {
+    min-height: 30px;
+  }
+  #shippinginfoBody\ french .turn-arround-box.second-box .turnarround-bottom {
+    min-height: 30px;
+  }
+  #shippinginfoBody\ french .turn-arround-box.second-box::after {
+    top: 49%;
+  }
+  #business-cheques .turnarround-bottom {
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .turnarround-bottom-left::after,
+  #business-cheques .turnarround-bottom-right::after {
+    position: absolute;
+    content: '';
+    background: url(../images/shipping-Images/divider-img.jpg);
+    width: 5px;
+    height: 50px;
+    right: 0;
+    top: 22px;
+  }
+  #shippinginfoBody\ french #business-cheques .turn-arround-box {
+    min-height: 356px;
+  }
+  #shippinginfoBody\ french .turn-arround.turn-arround_new .turn-arround-box.first-box {
+    min-height: 356px;
+  }
+  #shippinginfoBody\ french .turn-arround-inner .turn-arround-box {
+    min-height: 309px;
+  }
+  #shippinginfoBody\ english .turn-arround .turn-arround-inner .turnarround-bottom {
+    margin-bottom: 15px;
+  }
+  #shippinginfoBody\ english .business-days {
+    min-height: 60px;
+  }
+  #shippinginfoBody\ english .turnarround-bottom-left .turn-heading,
+  #shippinginfoBody\ english .turnarround-bottom-right .turn-heading {
+    min-height: 44px;
+  }
+  #shippinginfoBody\ english #business-cheques .turn-arround-inner .turn-arround-box {
+    min-height: 351px;
+  }
+}
+@media only screen and (max-width: 918px) {
+  #shippinginfoBody\ french .banner-font h1 {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #shippinginfoBody\ french .banner-font h1 {
+    font-size: 13px;
+  }
+  #shippinginfoBody\ english #business-cheques .turn-arround-inner .turn-arround-box {
+    min-height: initial;
+  }
+  #shippinginfoBody\ french #business-cheques .turn-arround-box {
+    min-height: initial;
+  }
+  #shippinginfoBody\ english .turnarround-bottom {
+    min-height: inherit;
+  }
+  #shippinginfoBody\ english .business-days {
+    min-height: initial;
+  }
+  .banner-section {
+    min-height: 200px;
+  }
+  .cheque-class .nav li {
+    margin-right: 0px;
+    width: 50%;
+  }
+  .cheque-class .nav li {
+    margin-left: 0;
+  }
+  .cheque-class .nav li.active::before,
+  .cheque-class .nav li.active::after,
+  .cheque-class .nav li::before,
+  .cheque-class .nav li::after {
+    display: none;
+  }
+  .cheque-class .nav li a span {
+    display: none;
+    margin: 0px;
+  }
+  .cheque-class .nav li#personal-cheque a,
+  .cheque-class .nav li#business-cheque a {
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding: 0;
+    float: left;
+    width: 100%;
+  }
+  .more-less {
+    width: 38px;
+    height: 100%;
+  }
+  .business-days {
+    margin-top: 13px;
+    margin-bottom: 9px;
+  }
+  .turnarround-bottom-left::after,
+  #business-cheques .turnarround-bottom-right::after {
+    width: 5px;
+    height: 70px;
+    right: -10px;
+    top: 0px;
+  }
+  #business-cheques .turnarround-bottom-left,
+  #business-cheques .turnarround-bottom-right {
+    height: auto;
+  }
+  .banner-font {
+    padding: 60px 0 0;
+  }
+  .banner-font h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  .banner-font h4 {
+    font-size: 15px;
+  }
+  #personal-cheque a span,
+  #business-cheque a span {
+    padding: 9px;
+  }
+  .cheque-class .nav li#personal-cheque a span img,
+  .cheque-class .nav li#business-cheque a span img {
+    width: 20px;
+    height: 20px;
+  }
+  .cheque-class .nav li#personal-cheque a p,
+  .cheque-class .nav li#business-cheque a p {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+  .cheque-class .nav li#personal-cheque a img,
+  .cheque-class .nav li#business-cheque a img {
+    margin-right: 10px;
+    padding: 8px 5px;
+    width: 27px;
+  }
+  .cheque-class .nav li {
+    margin-right: 0px;
+  }
+  #business-cheques .shipping-fee > h3,
+  #business-cheques .turn-arround > h3 {
+    font-size: 17px;
+  }
+  #business-cheques .shipping-fees-details .ship-fee-box {
+    padding: 25px 0 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #business-cheques .turn-arround-inner .turn-arround-box,
+  .turn-arround-inner .turn-arround-box {
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 25px 0;
+    float: left;
+    width: 100%;
+  }
+  .turn-arround-box h4 {
+    margin-top: 10px;
+  }
+  .business-days {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  .turn-arround-box.first-box::after {
+    right: 0;
+    top: auto;
+    left: 0;
+    bottom: -46px;
+    margin: 0 auto;
+    right: 0;
+  }
+  .turn-arround-box.second-box::after {
+    right: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: -47px;
+  }
+  .returns-funds ul li {
+    margin-bottom: 20px;
+    padding-left: 35px;
+    padding-right: 10px;
+    width: 100%;
+  }
+  #accordion .panel-title {
+    font-size: 13px;
+  }
+  .more-less {
+    font-size: 35px;
+    width: 40px;
+    height: 40px;
+  }
+  #accordion .panel-heading .panel-title a {
+    padding: 10px 15px;
+  }
+  .message-bottom-left img {
+    max-width: 340px;
+    position: static;
+    margin-bottom: 20px;
+  }
+  .message-bottom-left {
+    float: left;
+    width: 100%;
+  }
+  .message-bottom h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+  }
+  .message-bottom p {
+    font-size: 14px;
+  }
+  .message-bottom {
+    padding: 40px 0 40px;
+  }
+  .more-less {
+    padding: 0px 4px;
+  }
+  .returns-funds ul.pull-left {
+    width: 100%;
+    padding-right: 0;
+  }
+  .returns-funds ul.pull-right {
+    width: 100%;
+  }
+  #shippinginfoBody\ french .turn-arround-box.second-box .turnarround-bottom {
+    min-height: initial;
+  }
+  #shippinginfoBody\ french .business-days {
+    min-height: initial;
+  }
+  #shippinginfoBody\ french .turn-arround-box.second-box::after {
+    top: inherit;
+  }
+}
+@media only screen and (max-width: 567px) {
+  .banner-font h1 {
+    font-size: 21px;
+  }
+  .shipping-fees-details {
+    padding: 20px 30px;
+    margin-bottom: 20px;
+  }
+  .free-ship-country h3 {
+    font-size: 20px;
+  }
+  .free-ship-country h5 {
+    font-size: 15px;
+  }
+  .free-ship-country p {
+    font-size: 12px;
+  }
+  .returns-funds h2 {
+    font-size: 27px;
+    margin-bottom: 23px;
+  }
+  #accordion .panel-heading .panel-title a {
+    padding: 10px 40px 10px 15px;
+  }
+  #accordion .panel-title {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 479px) {
+  #shippinginfoBody\ french .banner-font {
+    width: 60%;
+  }
+  .banner-font h1 {
+    font-size: 18px;
+  }
+  .banner-section {
+    min-height: 160px;
+  }
+  .banner-font {
+    padding: 53px 0 0;
+  }
+  .cheque-class .nav li#personal-cheque a img,
+  .cheque-class .nav li#business-cheque a img {
+    margin-right: 2px;
+    padding: 7px 5px;
+    width: 24px;
+  }
+  .cheque-class .nav li#personal-cheque a p,
+  .cheque-class .nav li#business-cheque a p {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+  .cheque-class .nav li#personal-cheque a span img,
+  .cheque-class .nav li#business-cheque a span img {
+    width: 15px;
+    height: 15px;
+  }
+  .cheque-class .nav li {
+    margin-right: 0px;
+  }
+  .more-less {
+    width: 38px;
+    height: 100% !important;
+  }
+  #personal-cheque a span,
+  #business-cheque a span {
+    padding: 7px;
+  }
+  #personal-cheques {
+    padding: 20px 20px 20px;
+  }
+  .cheque-catagories {
+    margin-top: 40px;
+  }
+  .more-less {
+    width: 38px;
+    height: 38px;
+  }
+  .ship-fee-box:first-child .business-day p,
+  .ship-fee-box:nth-child(2) .business-day p span {
+    font-size: 28px;
+  }
+  .ship-fee-box .business-day p {
+    font-size: 16px;
+  }
+  .returns-funds h2 {
+    font-size: 25px;
+  }
+  .message-bottom h2 {
+    font-size: 24px;
+  }
+  #business-cheques {
+    padding: 30px 15px 20px;
+  }
+}
+@media screen and (min-width: 568px) and (max-width: 640px) {
+  .banner-font h1 {
+    font-size: 21px;
+  }
+}
+@media screen and (min-width: 391px) and (max-width: 475px) {
+  .banner-font h1 {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 525px) {
+  .banner-font h1 {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .banner-font h1 {
+    font-size: 14px;
+  }
+  #shippinginfoBody\ french .cheque-class .nav li#personal-cheque a p,
+  #shippinginfoBody\ french .cheque-class .nav li#business-cheque a p {
+    font-size: 9px;
+    padding: 3px 4px 3px 4px;
+  }
+  .shipping-fee > h3,
+  .turn-arround > h3 {
+    font-size: 17px;
+  }
+  .returns-funds-bottom img {
+    max-width: 290px;
+  }
+  .free-ship-country h5 {
+    font-size: 14px;
+  }
+  #personal-cheques > p {
+    margin-bottom: 0;
+  }
+  .cheque-class .nav li#personal-cheque a p,
+  .cheque-class .nav li#business-cheque a p {
+    font-size: 11px;
+    padding: 3px 4px 3px 4px;
+  }
+  #personal-cheque a span,
+  #business-cheque a span {
+    padding: 7px 5px;
+  }
+  .shipping-fee,
+  .turn-arround {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .free-ship-country h3 {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #business-cheques .turnarround-bottom {
+    margin-bottom: 5px;
+  }
+  .returns-funds {
+    padding-top: 46px;
+  }
+}
+@media only screen and (max-width: 359px) {
+  .banner-font h1 {
+    font-size: 13px;
+  }
+  .tab-content p,
+  .faq-content p,
+  .message-bottom p,
+  .returns-funds ul li {
+    font-size: 13px;
+  }
+  .shipping-fees-details {
+    padding: 20px 10px;
+  }
+  .faq-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  .message-bottom-left img {
+    max-width: 280px;
+  }
+  .returns-funds ul li {
+    margin-bottom: 15px;
+  }
+  .tab-content p,
+  .faq-content p {
+    font-size: 11px;
+  }
+}

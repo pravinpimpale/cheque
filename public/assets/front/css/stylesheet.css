@@ -1,0 +1,16 @@
+@font-face {
+  font-family: pdscmicr e13b;
+  src: url(PDSCMICRe13B.eot);
+  src: url(PDSCMICRe13B.eot?#iefix) format('embedded-opentype'), url(PDSCMICRe13B.woff) format('woff'),
+    url(PDSCMICRe13B.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+#resizing_select {
+  width: 50px;
+}
+
+#width_tmp_select {
+  display: none;
+}
