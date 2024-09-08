@@ -7,9 +7,12 @@
             <div class="row">
                 <div class="col-md-12"> <!-- bof  breadcrumb -->
                     <div id="navBreadCrumb"> <a href="/">Home</a>&nbsp;<span class="separator">//</span>&nbsp;
-                        <a href="{{ url('manual-cheque') }}">{{ $chequeCategoryName }}</a>&nbsp;<span
-                            class="separator">//</span>&nbsp;
+                        <a href="{{ url('manual-cheque-list/' . 1) }}">{{ $chequeCategoryName }}</a>&nbsp;<span class="separator">
+                            @if ($chequeCategoryName == 'Laser Cheques')
+                                //
+                        </span>&nbsp;
                         {{ $chequeSubCategoryName }}
+                        @endif
                     </div>
                     <div class=" col-sm-12 col-md-12 one_section">
                         <gcse:searchresults></gcse:searchresults>
@@ -28,11 +31,12 @@
                                                         @foreach ($chequeList as $cheque)
                                                             <td>
                                                                 <div class="prd_info">
-                                                                    <div class="boxy"><a href="{{ url('order/' . $cheque->id) }}"><img
+                                                                    <div class="boxy"><a
+                                                                            href="{{ url('order/' . $cheque->id) }}"><img
                                                                                 src="{{ asset('assets/front/img/' . $cheque->img) }}"
                                                                                 alt="{{ $cheque->chequeName }}"
                                                                                 title=" {{ $cheque->chequeName }} "
-                                                                                width="100" height="80"
+                                                                                width="200" height="90"
                                                                                 class="listingProductImage"></a>
 
                                                                         <h3 class="itemTitle tld"><a

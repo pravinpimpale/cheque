@@ -30,28 +30,18 @@
                                     <!-- BOF: Display grid of available sub-categories, if any -->
                                     <ul class="productsContainer">
                                         <div class="product-listing-main">
-                                            @if ($chequeName == 'Manual Cheques')
-                                            @foreach ($chequesCategory as $cheque)
-                                                <li class="productListing twoColOne threeColOne fourColOne back "><a
-                                                        href="{{ url('manual-cheque-list/' . $cheque->id) }}"><img
-                                                            src="{{ asset('assets/front/img/' . $cheque->img) }}"
-                                                            alt="{{ $cheque->categoriesName }}" title=" {{ $cheque->categoriesName }} " width="100"
-                                                            height="80">
-                                                        <br>{{ $cheque->categoriesName }}
-                                                    </a>
-                                                </li>
-                                            @endforeach
-                                             @else
-                                                 @foreach ($chequesCategory as $cheque)
-                                                <li class="productListing twoColOne threeColOne fourColOne back "><a
-                                                        href="{{ url('laser-cheque-list/' . $cheque->id) }}"><img
-                                                            src="{{ asset('assets/front/img/' . $cheque->img) }}"
-                                                            alt="{{ $cheque->categoriesName }}" title=" {{ $cheque->categoriesName }} " width="100"
-                                                            height="80">
-                                                        <br>{{ $cheque->categoriesName }}
-                                                    </a>
-                                                </li>
-                                            @endforeach
+                                            @if ($chequeName == 'Laser Cheques')
+                                                @foreach ($chequesCategory as $cheque)
+                                                    <li class="productListing twoColOne threeColOne fourColOne back "><a
+                                                            href="{{ url('laser-cheque-list/' . $cheque->id) }}"><img
+                                                                src="{{ asset('assets/front/img/' . $cheque->img) }}"
+                                                                alt="{{ $cheque->categoriesName }}"
+                                                                title=" {{ $cheque->categoriesName }} " width="100"
+                                                                height="80">
+                                                            <br>{{ $cheque->categoriesName }}
+                                                        </a>
+                                                    </li>
+                                                @endforeach
                                             @endif
                                         </div>
                                     </ul><!-- EOF: Display grid of available sub-categories -->
@@ -68,8 +58,7 @@
                                         and forms to choose from. Our laser cheques are compatible
                                         and guaranteed to work with your accounting software including <a
                                             href="">Peachtree</a>,
-                                        <a href="">Quickbooks</a>, <a
-                                            href="">Quicken</a>
+                                        <a href="">Quickbooks</a>, <a href="">Quicken</a>
                                         and more, our cheques are accepted at all Canadian bank institutions and credit
                                         unions.
                                     </p>

@@ -14,11 +14,11 @@
                         <ul id="menu-footer-menu" class="menu">
                             <li id="menu-item-55243"
                                 class="menu-item menu-item-type-post_type menu-item-object-page first menu-item-55243">
-                                <a href="https://chequesnow.ca/manual-cheques/" data-ps2id-api="true">Manual Cheques</a>
+                                <a href="{{ url('manual-cheque-list/' . 1) }}" data-ps2id-api="true">Manual Cheques</a>
                             </li>
                             <li id="menu-item-55244"
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55244"><a
-                                    href="https://chequesnow.ca/laser-cheques/" data-ps2id-api="true">Laser Cheques</a>
+                                    href="{{ url("laser-cheque") }}" data-ps2id-api="true">Laser Cheques</a>
                             </li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@
                     <div class="textwidget custom-html-widget">Toll Free : <a
                             href="tel+:18667602661">1-866-760-2661</a><br>
                         Fax :877-760-2435<br>
-                        Email : <a href="mailto:orders@printnow.ca">orders@printnow.ca</a>
+                        Email : <a href="mailto:orders@printnow.ca">order@justcheques.ca</a>
                         <br>
                     </div>
                 </div>

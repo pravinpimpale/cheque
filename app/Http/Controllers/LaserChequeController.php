@@ -42,14 +42,14 @@ class LaserChequeController extends Controller
     public function show($id)
     {
         // Find the cheque categories by manual_cheque_id
-        $chequeList = ChequeCategories::where('manual_cheque_id', $id)->get();
+        $chequeList = ChequeCategories::where('laser_cheque_id', $id)->get();
 
         // Set the cheque category name statically
         $chequeCategoryName = 'Laser Cheques';
 
         // Retrieve only the categoriesName from ManualCheque
         $chequeSubCategoryName = LaserCheque::where('id', $id)->pluck('categoriesName')->first();
-
+        
         // Pass the cheque, chequeCategoryName, and chequeSubCategoryName to the view
         return view('partials/chequesList', compact('chequeList', 'chequeCategoryName', 'chequeSubCategoryName'));
     }

@@ -481,7 +481,7 @@
                                                                             data-rule-required="true"
                                                                             name="cheque_end_number" size="10"
                                                                             maxlength="10" value=""
-                                                                            id="attrib-28-0" aria-required="true">
+                                                                            id="cheque_end_number" aria-required="true">
                                                                     </td>
                                                                     <td>
                                                                     </td>
@@ -529,20 +529,20 @@
                                                 <div id="price-cart-wrapper">
                                                     <!--bof Add to Cart Box -->
                                                     <div id="cartAdd" class="back field-to-hide">
-                                                        <input type="hidden" name="cart_quantity" value="1">
-                                                        <input type="hidden" name="cheque_img"
+                                                        <input type="hidden" name="cart_quantity" id="cart_quantity" value="1">
+                                                        <input type="hidden" name="cheque_img" id="cheque_img"
                                                             value="{{ $chequeList->img }}">
-                                                        <input type="hidden" name="vendor_id"
+                                                        <input type="hidden" name="vendor_id" id="vendor_id"
                                                             value="{{ auth()->user()->id }}">
-                                                        <input type="hidden" name="cheque_category_id"
+                                                        <input type="hidden" name="cheque_category_id" id="cheque_category_id"
                                                             value="{{ $chequeList->id }}"><input
                                                             class="cssButton submit_button button  button_in_cart"
-                                                            type="button" value="Preview" data-toggle="modal"
-                                                            data-target="#exampleModalCenter"
-                                                            onclick="return check_account_num();">
+                                                            id="previewButton" type="button" value="Preview"
+                                                            data-toggle="modal" data-target="#exampleModalCenter">
                                                         <span id="loadBar"></span><br><span id="button_cart"></span>
                                                     </div>
 
+                                                    <!-- Modal -->
                                                     <!-- Modal -->
                                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1"
                                                         role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -562,6 +562,7 @@
                                                                         <div class="row">
                                                                             <div class="col-md-4">
                                                                                 <div id="productAdditionalImages">
+                                                                                    <!-- Image preview section -->
                                                                                     <section id="demos">
                                                                                         <div class="sliderRow">
                                                                                             <div class="large-12 columns">
@@ -569,44 +570,23 @@
                                                                                                     class="owl-carousel owl-theme owl-loaded owl-drag">
                                                                                                     <div
                                                                                                         class="owl-stage-outer">
-                                                                                                        <div class="owl-stage"
-                                                                                                            style="transform: translate3d(0px, 0px, 0px); transition: all; width: 408px;">
-                                                                                                            <div class="owl-item active"
-                                                                                                                style="width: 388px; margin-right: 20px;">
+                                                                                                        <div
+                                                                                                            class="owl-stage">
+                                                                                                            <div
+                                                                                                                class="owl-item active">
                                                                                                                 <div
                                                                                                                     class="item">
                                                                                                                     <a class="fancybox-buttons"
                                                                                                                         data-fancybox-group="button"
                                                                                                                         id="mainProductImage"
-                                                                                                                        rel="productImages"
-                                                                                                                        href="{{ asset('assets/front/img/' . $chequeList->img) }}" target="blank"><img
+                                                                                                                        rel="productImages">
+                                                                                                                        <img id="chequeImgPreview"
                                                                                                                             src="{{ asset('assets/front/img/' . $chequeList->img) }}"
-                                                                                                                            alt="Laser Cheques / Computer Cheques on top"
-                                                                                                                            title=" Laser Cheques / Computer Cheques on top "
-                                                                                                                            width="100"
-                                                                                                                            height="auto"></a>
+                                                                                                                            alt="Product Image"
+                                                                                                                            style="width: 100%; height: auto;">
+                                                                                                                    </a>
                                                                                                                 </div>
                                                                                                             </div>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="owl-nav disabled">
-                                                                                                        <div
-                                                                                                            class="owl-prev disabled">
-                                                                                                            <i
-                                                                                                                class="fa fa-chevron-left"></i>
-                                                                                                        </div>
-                                                                                                        <div
-                                                                                                            class="owl-next disabled">
-                                                                                                            <i
-                                                                                                                class="fa fa-chevron-right"></i>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div
-                                                                                                        class="owl-dots disabled">
-                                                                                                        <div
-                                                                                                            class="owl-dot active">
-                                                                                                            <span></span>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -616,7 +596,87 @@
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-4 ml-auto">
-                                                                                
+                                                                                <div class="card mt-5">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Order
+                                                                                            Details</h5>
+                                                                                        <p><strong>Customer ID:</strong>
+                                                                                            <span
+                                                                                                id="previewCustomerID"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Quantity:</strong> <span
+                                                                                                id="previewQuantity"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Color:</strong> <span
+                                                                                                id="previewColor"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Company Info:</strong>
+                                                                                            <span
+                                                                                                id="previewCompanyInfo"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Institution
+                                                                                                Number:</strong> <span
+                                                                                                id="previewInstitutionNumber"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Transit Number:</strong>
+                                                                                            <span
+                                                                                                id="previewTransitNumber"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Account Number:</strong>
+                                                                                            <span
+                                                                                                id="previewAccountNumber"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Cheque Start
+                                                                                                Number:</strong> <span
+                                                                                                id="previewChequeStartNumber"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Cheque End
+                                                                                                Number:</strong> <span
+                                                                                                id="previewChequeEndNumber"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Cart Quantity:</strong>
+                                                                                            <span
+                                                                                                id="previewCartQuantity"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Cheque Category
+                                                                                                ID:</strong> <span
+                                                                                                id="previewChequeCategoryID"></span>
+                                                                                        </p>
+                                                                                        <p><strong>Vendor ID:</strong> <span
+                                                                                                id="previewVendorID"></span>
+                                                                                        </p>
+
+                                                                                        <div id="previewVoidedChequeFile"
+                                                                                            style="display:none;">
+                                                                                            <p><strong>Voided Cheque
+                                                                                                    File:</strong></p>
+                                                                                            <img id="voidedChequeFilePreview"
+                                                                                                src=""
+                                                                                                alt="Voided Cheque"
+                                                                                                style="width: 100px;">
+                                                                                        </div>
+
+                                                                                        <div id="previewCompanyLogo"
+                                                                                            style="display:none;">
+                                                                                            <p><strong>Company
+                                                                                                    Logo:</strong></p>
+                                                                                            <img id="companyLogoPreview"
+                                                                                                src=""
+                                                                                                alt="Company Logo"
+                                                                                                style="width: 100px;">
+                                                                                        </div>
+
+                                                                                        <div id="previewChequeImg"
+                                                                                            style="display:none;">
+                                                                                            <p><strong>Cheque
+                                                                                                    Image:</strong></p>
+                                                                                            <img id="chequeImgPreview"
+                                                                                                src=""
+                                                                                                alt="Cheque Image"
+                                                                                                style="width: 100px;">
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -624,12 +684,14 @@
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
                                                                         data-dismiss="modal">Edit</button>
-                                                                    <button type="submit" class="btn btn-primary">Place
+                                                                    <button type="submit" class="btn btn-primary"
+                                                                        onclick="return check_account_num();">Place
                                                                         Order</button>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="clearBoth"></div>
                                                     <!--eof Add to Cart Box-->
                                                 </div>
@@ -1348,14 +1410,16 @@
 
                 // Prompt the user to enter a new cheque_start_number
                 var newChequeStartNumber = prompt("Enter the new Cheque Start Number:");
+                var newChequeEndNumber = prompt("Enter the new Cheque End Number:");
 
-                if (customerId && newChequeStartNumber !== null) { // Check if user provided a value or pressed cancel
+                if (customerId && newChequeStartNumber !== null && newChequeEndNumber !== null) { // Check if user provided a value or pressed cancel
                     $.ajax({
                         url: `/reorder/${customerId}`,
                         type: 'POST',
                         data: {
                             customer_id: customerId,
                             cheque_start_number: newChequeStartNumber,
+                            cheque_end_number: newChequeEndNumber,
                         },
                         success: function(data) {
                             if (data.success) {
@@ -1371,6 +1435,68 @@
                             alert('An error occurred. Please try again.');
                         }
                     });
+                }
+            });
+
+            //preview 
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Handle preview button click
+                document.getElementById('previewButton').addEventListener('click', function() {
+                    // Get form values
+                    document.getElementById('previewCustomerID').innerText = document.getElementById(
+                        'customer_id').value;
+                    document.getElementById('previewQuantity').innerText = document.getElementById('quantity')
+                        .value;
+
+                    // Get the selected color radio button value
+                    const selectedColor = document.querySelector('input[name="color"]:checked');
+                    if (selectedColor) {
+                        document.getElementById('previewColor').innerText = selectedColor.value;
+                    }
+
+                    document.getElementById('previewCompanyInfo').innerText = document.getElementById(
+                        'attrib-21-0').value;
+                    document.getElementById('previewInstitutionNumber').innerText = document.getElementById(
+                        'institution_number').value;
+                    document.getElementById('previewTransitNumber').innerText = document.getElementById(
+                        'transit_number').value;
+                    document.getElementById('previewAccountNumber').innerText = document.getElementById(
+                        'account_number').value;
+                    document.getElementById('previewChequeStartNumber').innerText = document.getElementById(
+                        'attrib-28-0').value;
+                    document.getElementById('previewChequeEndNumber').innerText = document.getElementById(
+                        'cheque_end_number').value;
+                    document.getElementById('previewCartQuantity').innerText = document.getElementById(
+                        'cart_quantity').value;
+                    document.getElementById('previewChequeCategoryID').innerText = document.getElementById(
+                        'cheque_category_id').value;
+                    document.getElementById('previewVendorID').innerText = document.getElementById('vendor_id')
+                        .value;
+
+                    // Handle file previews
+                    previewFile('attrib-31-0', 'voidedChequeFilePreview', 'previewVoidedChequeFile');
+                    previewFile('company_logo', 'companyLogoPreview', 'previewCompanyLogo');
+                    previewFile('cheque_img', 'chequeImgPreview', 'previewChequeImg');
+                });
+
+                // Function to preview file
+                function previewFile(inputId, imgId, previewSectionId) {
+                    const fileInput = document.getElementById(inputId);
+                    const file = fileInput.files[0];
+                    const preview = document.getElementById(imgId);
+                    const previewSection = document.getElementById(previewSectionId);
+
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            preview.src = e.target.result;
+                            previewSection.style.display = 'block';
+                        }
+                        reader.readAsDataURL(file);
+                    } else {
+                        previewSection.style.display = 'none';
+                    }
                 }
             });
         </script>

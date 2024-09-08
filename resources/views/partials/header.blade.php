@@ -21,7 +21,7 @@
                     <!-- Category Navigation -->
                     <li class="topmenu hasSub no-js extrimg"
                         data-main="includes/templates/chequesplus/images/nav-images/quickbooks-cheques.png">
-                        <a class="category-top" href="{{ url('manual-cheque') }}">Manual Cheques</a>
+                        <a class="category-top" href="{{ url('manual-cheque-list/' . 1) }}">Manual Cheques</a>
                     </li>
                     <li class="topmenu hasSub no-js extrimg"
                         data-main="includes/templates/chequesplus/images/nav-images/quickbooks-cheques.png">

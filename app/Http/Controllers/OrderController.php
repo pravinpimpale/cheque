@@ -18,7 +18,7 @@ class OrderController extends Controller
         // Check if the user is authenticated
         if (Auth::check()) {
             // Retrieve all orders made by the logged-in user
-            $orders = Order::where('customer_id', Auth::user()->id)->latest()->get();
+            $orders = Order::where('vendor_id', Auth::user()->id)->latest()->get();
 
             // Initialize an empty array to store total prices
             $totalPrices = [];
@@ -83,6 +83,7 @@ class OrderController extends Controller
             // Create a new order with the same data
             $newOrder = $latestOrder->replicate(); // Copies the original order data
             $newOrder->cheque_start_number = $request->cheque_start_number; // Update the cheque_start_number
+            $newOrder->cheque_start_number = $request->cheque_end_number; // Update the cheque_start_number
             $newOrder->created_at = now(); // Update timestamps if necessary
             $newOrder->updated_at = now();
             $newOrder->save();

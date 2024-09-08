@@ -30,7 +30,7 @@
                                                                         Order Online in under 5 minutes.<br>
                                                                         Next-Day Delivery Options.</h2>
                                                                     <p><a class="banner-btn"
-                                                                            href="{{ url("manual-cheque") }}">Manual
+                                                                            href="{{ url('manual-cheque-list/' . 1) }}">Manual
                                                                             Cheques</a> <a class="banner-btn"
                                                                             href="{{ url("laser-cheque") }}">Laser
                                                                             Cheques</a> 
@@ -137,7 +137,7 @@
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
                                                                                     <h3><a
-                                                                                            href="https://chequesnow.ca/manual-cheques/">Manual
+                                                                                            href="{{ url('manual-cheque-list/' . 1) }}">Manual
                                                                                             Cheques</a></h3>
 
                                                                                 </div>
@@ -157,7 +157,7 @@
                                                                                             suppliers</em>
                                                                                     </p>
                                                                                     <p><a class="btn btn-danger btn-lg"
-                                                                                            href="https://chequesnow.ca/chequeci/manual"
+                                                                                            href="{{ url('manual-cheque-list/' . 1) }}"
                                                                                             target=""
                                                                                             rel="noopener noreferrer">Order
                                                                                             Now</a></p>
@@ -184,7 +184,7 @@
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
                                                                                     <h3><a title="Laser Cheques"
-                                                                                            href="https://chequesnow.ca/laser-cheques/">Laser
+                                                                                            href="{{ url("laser-cheque") }}">Laser
                                                                                             Cheques</a></h3>
 
                                                                                 </div>
@@ -204,7 +204,7 @@
                                                                                             suppliers</em>
                                                                                     </p>
                                                                                     <p><a class="btn btn-danger btn-lg"
-                                                                                            href="https://chequesnow.ca/chequeci/laser/">Order
+                                                                                            href="{{ url("laser-cheque") }}">Order
                                                                                             Now</a></p>
 
                                                                                 </div>
@@ -326,7 +326,7 @@
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
                                                                                     <h3><a title="Personal Cheques"
-                                                                                            href="https://chequesnow.ca/personal-cheques/">Personal
+                                                                                            href="#">Personal
                                                                                             Cheques</a></h3>
 
                                                                                 </div>
@@ -344,7 +344,7 @@
                                                                                             suppliers</em>
                                                                                     </p>
                                                                                     <p><a class="btn btn-danger btn-lg"
-                                                                                            href="https://chequesnow.ca/chequeci/personal-cheques/">Order
+                                                                                            href="#">Order
                                                                                             Now</a></p>
                                                                                 </div>
                                                                             </div>
