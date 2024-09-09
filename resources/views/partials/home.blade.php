@@ -80,7 +80,7 @@
                                                                             Customer?&nbsp;&nbsp;</strong> <a
                                                                             class="btn btn-danger btn-lg"
                                                                             title="REORDER Express Cheque Re-Order Form"
-                                                                            href="https://chequesnow.ca/reorder/">Re-Order
+                                                                            href="">Re-Order
                                                                             Cheques Now</a></p>
 
                                                                 </div>
