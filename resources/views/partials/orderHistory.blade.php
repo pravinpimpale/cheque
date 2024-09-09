@@ -127,9 +127,9 @@
                                                         <div class="item"><a class="fancybox-buttons"
                                                                 data-fancybox-group="button" id="mainProductImage"
                                                                 rel="productImages"
-                                                                href="/storage/{{ $order->company_logo }}"
+                                                                href="/storage/public/{{ $order->company_logo }}"
                                                                 target="blank"><img
-                                                                    src="/storage/{{ $order->company_logo }}"
+                                                                    src="/storage/public/{{ $order->company_logo }}"
                                                                     alt="null" title="null" width="80"
                                                                     height="80"></a>
                                                         </div>
@@ -138,9 +138,9 @@
                                                         <div class="item"><a class="fancybox-buttons"
                                                                 data-fancybox-group="button" id="mainProductImage"
                                                                 rel="productImages"
-                                                                href="/storage/{{ $order->voided_cheque_file }}"
+                                                                href="/storage/public/{{ $order->voided_cheque_file }}"
                                                                 target="blank"><img
-                                                                    src="/storage/{{ $order->voided_cheque_file }}"
+                                                                    src="/storage/public/{{ $order->voided_cheque_file }}"
                                                                     alt="null" title="null" width="80"
                                                                     height="80"></a>
                                                         </div>
