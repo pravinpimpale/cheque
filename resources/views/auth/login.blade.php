@@ -10,6 +10,15 @@
                         Login
                     </div>
                     <gcse:searchresults></gcse:searchresults>
+                     @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="headerWrapper">
                         <h1 id="loginDefaultHeading">Ready to Make a Purchase?</h1>
                         <p class="loginpagesub-heading">Please create an account or sign in with an exisiting account.</p>

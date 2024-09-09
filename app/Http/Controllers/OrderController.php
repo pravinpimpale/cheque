@@ -10,6 +10,8 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function Laravel\Prompts\error;
+
 class OrderController extends Controller
 {
 
@@ -63,6 +65,12 @@ class OrderController extends Controller
      */
     public function index($id)
     {
+        // Check if the user is authenticated
+        if (!Auth::check()) {
+            // You can return a custom error message or redirect to a login page
+            return redirect()->route('login')->withErrors('You need to be logged in to access this page.');
+        }
+
         // Retrieve the cheque category by id
         $chequeList = ChequeCategories::findOrFail($id);
         $customers = Customer::where('user_id', Auth::user()->id)->get();
@@ -79,6 +87,7 @@ class OrderController extends Controller
         // Pass the cheque category data to the view
         return view('partials/chequeDetailsForm', compact('chequeList', 'chequeCategoryName', 'chequeSubCategoryName', 'customers'));
     }
+
 
 
 
