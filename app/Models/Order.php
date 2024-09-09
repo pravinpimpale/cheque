@@ -29,5 +29,6 @@ class Order extends Model
         'cheque_img',
         'order_status',
         'balance_status',
+        'reorder',
     ];
 }

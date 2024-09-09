@@ -25,17 +25,34 @@ class OrderController extends Controller
 
             // Loop through each order and calculate the total price
             foreach ($orders as $order) {
-                // Retrieve the price of the associated cheque category
-                $price = ChequeCategories::where('id', $order->cheque_category_id)->pluck('price')->first();
+                // Retrieve the cheque category data
+                $chequeData = ChequeCategories::find($order->cheque_category_id);
 
-                // Calculate total price by multiplying quantity by price
-                $totalPrice = $order->quantity * $price;
+                if ($chequeData) {
+                    // Retrieve the price from the cheque category
+                    $price = $chequeData->price;
 
-                // Store the total price with the order ID as the key
-                $totalPrices[$order->id] = $totalPrice;
+                    // Determine the sub-category name based on the type of cheque
+                    if ($chequeData->manual_cheque_id != 0) {
+                        $chequeSubCategory = ManualCheque::where('id', $chequeData->manual_cheque_id)->pluck('categoriesName')->first();
+                    } elseif ($chequeData->laser_cheque_id != 0) {
+                        $chequeSubCategory = LaserCheque::where('id', $chequeData->laser_cheque_id)->pluck('categoriesName')->first();
+                    } else {
+                        $chequeSubCategory = 'Unknown'; // Handle case where no sub-category is found
+                    }
+
+                    // Calculate total price by multiplying quantity by price
+                    $totalPrice = $order->quantity * $price;
+
+                    // Store the total price with the order ID as the key
+                    $totalPrices[$order->id] = $totalPrice;
+                } else {
+                    // Handle case where cheque category is not found
+                    $totalPrices[$order->id] = 0;
+                }
             }
             // Pass orders and total prices to the view
-            return view('partials.orderHistory', compact('orders', 'totalPrices'));
+            return view('partials.orderHistory', compact('orders', 'totalPrices', 'chequeData','chequeSubCategory'));
         } else {
             // Redirect to the login page if the user is not authenticated
             return redirect()->route('login');
@@ -75,27 +92,44 @@ class OrderController extends Controller
 
     public function reorder(Request $request, $customerId)
     {
+        // Get the current authenticated user's ID (assuming they are the vendor)
+        $vendorId = Auth::user()->id;
 
-        // Find the most recent order for this customer
-        $latestOrder = Order::where('customer_id', $customerId)->latest()->first();
+        // Find the most recent order for this customer where the vendor_id matches the current user's ID
+        $latestOrder = Order::where('customer_id', $customerId)
+            ->where('vendor_id', $vendorId)
+            ->latest()
+            ->first();
 
-        if ($latestOrder) {
-            // Create a new order with the same data
-            $newOrder = $latestOrder->replicate(); // Copies the original order data
-            $newOrder->cheque_start_number = $request->cheque_start_number; // Update the cheque_start_number
-            $newOrder->cheque_start_number = $request->cheque_end_number; // Update the cheque_start_number
-            $newOrder->created_at = now(); // Update timestamps if necessary
-            $newOrder->updated_at = now();
-            $newOrder->save();
-
-            return response()->json([
-                'success' => true,
-                'order_id' => $newOrder->id
-            ]);
+        // Check if an order was found
+        if (!$latestOrder) {
+            return response()->json(['error' => 'No matching order found for this customer and vendor'], 404);
         }
 
-        return response()->json(['success' => false]);
+        // Validate the request input except for quantity (it can be optional)
+        $validatedData = $request->validate([
+            'cheque_start_number' => 'required|integer',
+            'cheque_end_number' => 'required|integer',
+        ]);
+
+        // If quantity is provided, use it; otherwise, fallback to the last order's quantity
+        $quantity = $request->input('quantity', $latestOrder->quantity);
+
+        // Create a new order by replicating the latest one and updating fields
+        $reorder = $latestOrder->replicate(); // Replicate the latest order to create a new one
+        $reorder->quantity = $quantity; // Use the provided or last quantity
+        $reorder->cheque_start_number = $validatedData['cheque_start_number'];
+        $reorder->cheque_end_number = $validatedData['cheque_end_number'];
+        $reorder->reorder = '1';
+
+        // Save the new order
+        $reorder->save();
+
+        // Return a JSON response or redirect to success page
+        return response()->json(['message' => 'Reorder placed successfully!', 'order' => $reorder], 200);
     }
+
+
 
 
     /**
@@ -117,16 +151,18 @@ class OrderController extends Controller
             'quantity' => 'required|integer|min:1',
             'color' => 'required|string|max:255',
             'company_info' => 'nullable|string|max:1000',
-            'voided_cheque_file' => 'nullable', // 2MB max file size
+            'voided_cheque_file' => 'nullable',
             'institution_number' => 'nullable|string|max:20',
             'transit_number' => 'nullable|string|max:20',
             'account_number' => 'nullable|string|max:20',
             'confirm_account_number' => 'nullable|string|same:account_number',
             'cheque_start_number' => 'nullable|integer|min:1',
+            'cheque_end_number' => 'nullable|integer|min:1',
             'cart_quantity' => 'required|integer|min:1',
             'cheque_category_id' => 'required|integer',
-            'company_logo' => 'nullable', // 2MB max file size
-            'cheque_img' => 'nullable' // 2MB max file size
+            'company_logo' => 'nullable', 
+            'cheque_img' => 'nullable',
+            'reorder' => 'nullable'
         ]);
 
         // Create a new Order object with validated data
@@ -134,20 +170,21 @@ class OrderController extends Controller
 
         // Handle file uploads for 'voided_cheque_file', 'company_logo', and 'cheque_img'
         if ($request->hasFile('voided_cheque_file')) {
-            $order->voided_cheque_file = $request->file('voided_cheque_file')->store('uploads');
+            $order->voided_cheque_file = $request->file('voided_cheque_file')->store('public/uploads');
         }
 
         if ($request->hasFile('company_logo')) {
-            $order->company_logo = $request->file('company_logo')->store('logos');
+            $order->company_logo = $request->file('company_logo')->store('public/logos');
         }
 
         if ($request->hasFile('cheque_img')) {
-            $order->cheque_img = $request->file('cheque_img')->store('cheque_img');
+            $order->cheque_img = $request->file('cheque_img')->store('public/uploads');
         }
 
         // Set default values for order_status and balance_status
         $order->order_status = 'pending'; // Default order status
         $order->balance_status = 'pending'; // Default balance status
+        $order->reorder = '1';
 
         // Save the order to the database
         $order->save();

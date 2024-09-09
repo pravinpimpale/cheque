@@ -32,6 +32,7 @@ return new class extends Migration
             $table->string('cheque_img')->nullable();
             $table->string('order_status')->nullable();
             $table->string('balance_status')->nullable();
+            $table->string('reorder')->nullable();
             $table->timestamps();
 
             // Foreign keys

@@ -98,11 +98,14 @@
                                             <tr>
                                                 <th class="order-date">Order Date</th>
                                                 <th class="order-number">Order Number</th>
-                                                <th class="shipping-to">Shipped To</th>
+                                                <th class="shipping-to">Company Deatils</th>
+                                                <th class="shipping-to">Product Deatils</th>
                                                 <th class="total">Order Quantity</th>
                                                 <th class="total">Order Cost</th>
                                                 <th class="status">Order Status</th>
-                                                <th class="status">Pay Balance</th>
+                                                <th class="status">Payment Status</th>
+                                                <th class="status">Company Logo</th>
+                                                <th class="status">Void Cheque</th>
                                                 <th class="status ">Reorder</th>
                                             </tr>
                                         </thead>
@@ -112,11 +115,38 @@
                                                     <td class="order-date">{{ $order->created_at }}</td>
                                                     <td class="order-number">{{ $order->id }}</td>
                                                     <td class="shipping-to">{{ $order->company_info }}</td>
+                                                    <td class="shipping-to">
+                                                        {{ $chequeData->chequeName }}<br>{{ $chequeData->manual_cheque_id !=0 ? 'Manual Cheque': 'Laser Cheque' }}<br>{{ $chequeSubCategory }}
+                                                    </td>
                                                     <td class="quantity">{{ $order->quantity }}</td>
                                                     <td class="total">${{ $totalPrices[$order->id] }}</td>
-                                                    <td class="status">Pending</td>
-                                                    <td class="status">Pending</td>
-                                                    <td class="status ">0</td>
+                                                    <td class="status">{{ $order->order_status }}</td>
+                                                    <td class="status">{{ $order->balance_status }}</td>
+
+                                                    <td class="status">
+                                                        <div class="item"><a class="fancybox-buttons"
+                                                                data-fancybox-group="button" id="mainProductImage"
+                                                                rel="productImages"
+                                                                href="/storage/{{ $order->company_logo }}"
+                                                                target="blank"><img
+                                                                    src="/storage/{{ $order->company_logo }}"
+                                                                    alt="null" title="null" width="80"
+                                                                    height="80"></a>
+                                                        </div>
+                                                    </td>
+                                                    <td class="status">
+                                                        <div class="item"><a class="fancybox-buttons"
+                                                                data-fancybox-group="button" id="mainProductImage"
+                                                                rel="productImages"
+                                                                href="/storage/{{ $order->voided_cheque_file }}"
+                                                                target="blank"><img
+                                                                    src="/storage/{{ $order->voided_cheque_file }}"
+                                                                    alt="null" title="null" width="80"
+                                                                    height="80"></a>
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="reorder ">{{ $order->reorder }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

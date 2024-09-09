@@ -48,6 +48,7 @@
                                                             Customer<sup>*</sup></label>
                                                         <div class="customer_css">
                                                             <select name="customer_id" id="customer_id"
+                                                                onchange="updateFormAction()"
                                                                 class="form-control selectCustomer">
                                                                 <option selected>Choose Customer</option>
                                                                 @foreach ($customers as $customer)
@@ -64,8 +65,10 @@
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <button id="reorder-button" class="btn btn-primary"
+                                                    <button type="button" id="reorder-button" class="btn btn-primary"
+                                                        data-toggle="modal" data-target="#reorder"
                                                         style="display: none;">Reorder</button>
+
                                                     <h3 id="attribsOptionsText" class="field-to-hide">Options</h3>
                                                     <div class="wrapperAttribsOptions 2 field-to-hide">
                                                         <br>
@@ -529,13 +532,14 @@
                                                 <div id="price-cart-wrapper">
                                                     <!--bof Add to Cart Box -->
                                                     <div id="cartAdd" class="back field-to-hide">
-                                                        <input type="hidden" name="cart_quantity" id="cart_quantity" value="1">
+                                                        <input type="hidden" name="cart_quantity" id="cart_quantity"
+                                                            value="1">
                                                         <input type="hidden" name="cheque_img" id="cheque_img"
                                                             value="{{ $chequeList->img }}">
                                                         <input type="hidden" name="vendor_id" id="vendor_id"
                                                             value="{{ auth()->user()->id }}">
-                                                        <input type="hidden" name="cheque_category_id" id="cheque_category_id"
-                                                            value="{{ $chequeList->id }}"><input
+                                                        <input type="hidden" name="cheque_category_id"
+                                                            id="cheque_category_id" value="{{ $chequeList->id }}"><input
                                                             class="cssButton submit_button button  button_in_cart"
                                                             id="previewButton" type="button" value="Preview"
                                                             data-toggle="modal" data-target="#exampleModalCenter">
@@ -1251,6 +1255,150 @@
                                 </div>
                                 <br class="clearBoth">
                             </form>
+                            <div class="modal fade" id="reorder" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">
+                                                Reorder</h5>
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <form id="reorderForm" action="{{ url('reorder') }}" method="POST">
+                                                        @csrf
+                                                        <!-- eof Form start-->
+                                                        <div class="form-group">
+                                                            <label for="quantity">Select
+                                                                Quantity</label>
+                                                            <table>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="width: 100%; margin-left: 0px;">
+                                                                            <select name="quantity" id="quantity"
+                                                                                class="form-control" required
+                                                                                onchange="updateTotalAmount()">
+                                                                                <option value="65" data-quantity="0"
+                                                                                    selected>
+                                                                                    Please Select
+                                                                                    Quantity - Free
+                                                                                    shipping within
+                                                                                    ON &amp; QC
+                                                                                </option>
+                                                                                <option value="21" data-quantity="50"
+                                                                                    data-price="69">
+                                                                                    50 ( +$69.00 )
+                                                                                </option>
+                                                                                <option value="22" data-quantity="100"
+                                                                                    data-price="79">
+                                                                                    100 ( +$79.00 )
+                                                                                </option>
+                                                                                <option value="23" data-quantity="250"
+                                                                                    data-price="139">
+                                                                                    250 ( +$139.00 )
+                                                                                </option>
+                                                                                <option value="175" data-quantity="500"
+                                                                                    data-price="169">
+                                                                                    250 + 250 Cheque
+                                                                                    Envelopes ★ Sale
+                                                                                    ★ ( +$169.00 )
+                                                                                </option>
+                                                                                <option value="24" data-quantity="500"
+                                                                                    data-price="219">
+                                                                                    500 ( +$219.00 )
+                                                                                </option>
+                                                                                <option value="25"
+                                                                                    data-quantity="1000" data-price="319">
+                                                                                    1000 ★ BEST
+                                                                                    SELLER ★ (
+                                                                                    +$319.00 )
+                                                                                </option>
+                                                                                <option value="276"
+                                                                                    data-quantity="2000" data-price="429">
+                                                                                    1000 + 1000
+                                                                                    Cheque
+                                                                                    Envelopes ★ Sale
+                                                                                    ★ ( +$429.00 )
+                                                                                </option>
+                                                                                <option value="26"
+                                                                                    data-quantity="2000" data-price="479">
+                                                                                    2000 ( +$479.00
+                                                                                    )
+                                                                                </option>
+                                                                                <option value="27"
+                                                                                    data-quantity="2500" data-price="539">
+                                                                                    2500 ( +$539.00
+                                                                                    )
+                                                                                </option>
+                                                                                <option value="28"
+                                                                                    data-quantity="3000" data-price="599">
+                                                                                    3000 ( +$599.00
+                                                                                    )
+                                                                                </option>
+                                                                                <option value="29"
+                                                                                    data-quantity="4000" data-price="759">
+                                                                                    4000 ( +$759.00
+                                                                                    )
+                                                                                </option>
+                                                                                <option value="30"
+                                                                                    data-quantity="5000" data-price="929">
+                                                                                    5000 ( +$929.00
+                                                                                    )
+                                                                                </option>
+                                                                                <option value="64"
+                                                                                    data-quantity="10000"
+                                                                                    data-price="1499">
+                                                                                    10,000 (
+                                                                                    +$1,499.00 )
+                                                                                </option>
+                                                                                <option value="244"
+                                                                                    data-quantity="15000"
+                                                                                    data-price="1799">
+                                                                                    15000 (
+                                                                                    +$1,799.00 )
+                                                                                </option>
+                                                                            </select>
+                                                                        </td>
+                                                                        <td>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="cheque_start_number">Cheque Start
+                                                                Number</label>
+                                                            <input type="text" class="form-control"
+                                                                id="cheque_start_number" name="cheque_start_number"
+                                                                placeholder="Cheque Start Number" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="cheque_last_number">Cheque End
+                                                                Number</label>
+                                                            <input type="text" class="form-control"
+                                                                id="cheque_last_number" name="cheque_last_number"
+                                                                placeholder="Cheque End Number" required>
+                                                        </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Cancle</button>
+                                            <button type="button" class="btn btn-primary" id="submitReorderForm"
+                                                onclick="return check_account_num();">Place
+                                                Re-Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         @else
                             <!-- Show alert if user is not logged in -->
                             <script>
@@ -1402,42 +1550,6 @@
                 }
             });
 
-
-
-
-            $('#reorder-button').on('click', function() {
-                var customerId = $(this).data('customerId');
-
-                // Prompt the user to enter a new cheque_start_number
-                var newChequeStartNumber = prompt("Enter the new Cheque Start Number:");
-                var newChequeEndNumber = prompt("Enter the new Cheque End Number:");
-
-                if (customerId && newChequeStartNumber !== null && newChequeEndNumber !== null) { // Check if user provided a value or pressed cancel
-                    $.ajax({
-                        url: `/reorder/${customerId}`,
-                        type: 'POST',
-                        data: {
-                            customer_id: customerId,
-                            cheque_start_number: newChequeStartNumber,
-                            cheque_end_number: newChequeEndNumber,
-                        },
-                        success: function(data) {
-                            if (data.success) {
-                                alert('Order placed successfully with the updated Cheque Start Number!');
-                                // Optionally redirect to the order details page
-                                window.location.href = `/orders/${data.order_id}`;
-                            } else {
-                                alert('Failed to place order.');
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error:', error);
-                            alert('An error occurred. Please try again.');
-                        }
-                    });
-                }
-            });
-
             //preview 
 
             document.addEventListener('DOMContentLoaded', function() {
@@ -1498,6 +1610,53 @@
                         previewSection.style.display = 'none';
                     }
                 }
+            });
+
+
+            //reorder
+            let customerId; // Declare a global variable
+
+            // Capture customerId when the 'reorder-button' is clicked
+            document.getElementById('reorder-button').addEventListener('click', function() {
+                customerId = this.dataset.customerId; // Set customerId globally
+            });
+
+            $(document).ready(function() {
+                $('#submitReorderForm').click(function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    // Ensure customerId is set
+                    if (!customerId) {
+                        alert('Customer ID not found.');
+                        return;
+                    }
+
+                    // Collect form data
+                    var formData = {
+                        _token: $('input[name=_token]').val(), // Add CSRF token
+                        quantity: $('#quantity').val(),
+                        cheque_start_number: $('#cheque_start_number').val(),
+                        cheque_end_number: $('#cheque_last_number').val(),
+                    };
+                    console.log(formData);
+
+                    $.ajax({
+                        url: "{{ url('reorder') }}/" + customerId, // Append customerId to the URL
+                        type: "POST",
+                        data: formData,
+                        success: function(response) {
+                            // Handle success response here
+                            alert('Reorder placed successfully!');
+                            // Close the modal
+                            $('#reorder').modal('hide');
+                            window.location.href = "{{ route('success') }}";
+                        },
+                        error: function(xhr, status, error) {
+                            // Handle error response here
+                            console.log(xhr.responseText);
+                            alert('An error occurred. Please try again.');
+                        }
+                    });
+                });
             });
         </script>
         <!-- row -->

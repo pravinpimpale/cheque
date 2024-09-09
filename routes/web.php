@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/success', function () {
     return view('layouts.success');
-});
+})->name('success');
 
 // Route::get('/', function () {
 //     return view('partials.home');
