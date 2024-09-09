@@ -33,9 +33,9 @@ class OrderController extends Controller
                     $price = $chequeData->price;
 
                     // Determine the sub-category name based on the type of cheque
-                    if ($chequeData->manual_cheque_id != 0) {
+                    if ($chequeData->manual_cheque_id > 0) {
                         $chequeSubCategory = ManualCheque::where('id', $chequeData->manual_cheque_id)->pluck('categoriesName')->first();
-                    } elseif ($chequeData->laser_cheque_id != 0) {
+                    } elseif ($chequeData->laser_cheque_id > 0) {
                         $chequeSubCategory = LaserCheque::where('id', $chequeData->laser_cheque_id)->pluck('categoriesName')->first();
                     } else {
                         $chequeSubCategory = 'Unknown'; // Handle case where no sub-category is found
@@ -65,7 +65,7 @@ class OrderController extends Controller
     {
         // Retrieve the cheque category by id
         $chequeList = ChequeCategories::findOrFail($id);
-        $customers = Customer::all();
+        $customers = Customer::where('user_id', Auth::user()->id)->get();
 
         // Determine the category and subcategory names
         if ($chequeList->manual_cheque_id) {

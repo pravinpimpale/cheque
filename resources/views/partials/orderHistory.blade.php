@@ -116,7 +116,7 @@
                                                     <td class="order-number">{{ $order->id }}</td>
                                                     <td class="shipping-to">{{ $order->company_info }}</td>
                                                     <td class="shipping-to">
-                                                        {{ $chequeData->chequeName }}<br>{{ $chequeData->manual_cheque_id != 0 ? 'Manual Cheque' : 'Laser Cheque' }}<br>{{ $chequeSubCategory }}
+                                                        {{ $chequeData->chequeName }}<br>{{ $chequeData->manual_cheque_id === 0 ? 'Laser Cheque' : 'Manual Cheque' }}<br>{{ $chequeSubCategory }}
                                                     </td>
                                                     <td class="quantity">{{ $order->quantity }}</td>
                                                     <td class="total">${{ $totalPrices[$order->id] }}</td>
