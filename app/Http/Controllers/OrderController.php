@@ -120,7 +120,7 @@ class OrderController extends Controller
         $reorder->quantity = $quantity; // Use the provided or last quantity
         $reorder->cheque_start_number = $validatedData['cheque_start_number'];
         $reorder->cheque_end_number = $validatedData['cheque_end_number'];
-        $reorder->reorder = '1';
+        $reorder->reorder = ($latestOrder->reorder ?? 0) + 1;
 
         // Save the new order
         $reorder->save();

@@ -116,7 +116,7 @@
                                                     <td class="order-number">{{ $order->id }}</td>
                                                     <td class="shipping-to">{{ $order->company_info }}</td>
                                                     <td class="shipping-to">
-                                                        {{ $chequeData->chequeName }}<br>{{ $chequeData->manual_cheque_id !=0 ? 'Manual Cheque': 'Laser Cheque' }}<br>{{ $chequeSubCategory }}
+                                                        {{ $chequeData->chequeName }}<br>{{ $chequeData->manual_cheque_id != 0 ? 'Manual Cheque' : 'Laser Cheque' }}<br>{{ $chequeSubCategory }}
                                                     </td>
                                                     <td class="quantity">{{ $order->quantity }}</td>
                                                     <td class="total">${{ $totalPrices[$order->id] }}</td>
@@ -145,8 +145,11 @@
                                                                     height="80"></a>
                                                         </div>
                                                     </td>
-
-                                                    <td class="reorder ">{{ $order->reorder }}</td>
+                                                    @if ($order->reorder > 1)
+                                                        <td class="reorder ">{{ $order->reorder - 1}}</td>
+                                                    @else
+                                                        <td class="reorder ">-</td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                         </tbody>
