@@ -95,6 +95,7 @@
                                                 <tr>
                                                     <td class="order-date">{{ $customer->firstname }}</td>
                                                     <td class="order-number">{{ $customer->lastname }}</td>
+                                                    <td class="order-number">{{ $customer->email }}</td>
                                                     <td class="shipping-to">{{ $customer->company }}</td>
                                                     <td class="quantity">{{ $customer->street_address }}</td>
                                                     <td class="total">{{ $customer->telephone }}</td>
