@@ -170,15 +170,15 @@ class OrderController extends Controller
 
         // Handle file uploads for 'voided_cheque_file', 'company_logo', and 'cheque_img'
         if ($request->hasFile('voided_cheque_file')) {
-            $order->voided_cheque_file = $request->file('voided_cheque_file')->store('public/uploads');
+            $order->voided_cheque_file = $request->file('voided_cheque_file')->store('uploads');
         }
 
         if ($request->hasFile('company_logo')) {
-            $order->company_logo = $request->file('company_logo')->store('public/logos');
+            $order->company_logo = $request->file('company_logo')->store('logos');
         }
 
         if ($request->hasFile('cheque_img')) {
-            $order->cheque_img = $request->file('cheque_img')->store('public/uploads');
+            $order->cheque_img = $request->file('cheque_img')->store('uploads');
         }
 
         // Set default values for order_status and balance_status
