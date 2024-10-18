@@ -1,10 +1,7 @@
 <div class="navigation">
     <nav class="navbar navbar-custom" role="navigation">
         <div class="container-nav">
-            <button type="button" class="navbar-menu responsive-menu">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </button>
-            <div class="navbar-collapse navbar-main-collapse">
+            <div class="team">
                 <ul class="nav navbar-nav">
                     <li class="first-nav">
                         <a href="/">
@@ -12,7 +9,13 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <button type="button" class="navbar-menu responsive-menu" onclick="team()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+
+            </div>
+            <div class="navbar-collapse navbar-main-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-navs">
                     <li class="first-nav">
                         <a href="/">
                             <i class="fa fa-home"></i>
@@ -39,32 +42,32 @@
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user fa-2x"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <ul>
                                 @guest
-                                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                                <li><a class="dropdown-item" href="/login">Login</a></li>
                                 @endguest
                                 <li>
                                     @if (Auth::check() && Auth::user()->role === 'vendor')
-                                        <a class="dropdown-item" href="{{ url('/customer-history') }}">Customers</a>
+                                    <a class="dropdown-item" href="{{ url('/customer-history') }}">Customers</a>
                                     @endif
                                 </li>
                                 <li>
                                     @if (Auth::check() && Auth::user()->role === 'vendor')
-                                        <a class="dropdown-item" href="{{ url('/order-history') }}">Orders</a>
+                                    <a class="dropdown-item" href="{{ url('/order-history') }}">Orders</a>
                                     @endif
                                 </li>
                                 @auth
-                                    <li>
-                                        <a class="category-top text-decoration-none dropdown-item" href="#"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-                                        <form id="logout-form" method="POST" action="{{ route('logout') }}"
-                                            style="display: none;">
-                                            @csrf
-                                        </form>
-                                    </li>
+                                <li>
+                                    <a class="category-top text-decoration-none dropdown-item" href="#"
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" method="POST" action="{{ route('logout') }}"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
                                 @endauth
                             </ul>
                         </div>
@@ -74,3 +77,20 @@
         </div>
     </nav>
 </div>
+
+<script>
+    function team() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+
+  if (navbarCollapse) {
+    // If navbar-collapse exists, remove it
+    navbarCollapse.classList.toggle('navbar-collapse');
+  } else {
+    // If navbar-collapse doesn't exist, add it to the first element with the class "navbar-collapse"
+    const navbar = document.querySelector('.navbar-main-collapse');
+    if (navbar) {
+      navbar.classList.add('navbar-collapse');
+    }
+  }
+    }
+</script>
