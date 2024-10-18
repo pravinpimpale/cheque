@@ -1668,7 +1668,8 @@ z-index:1; border-right:1px #ccc solid;
 float:left;
 width:100%;
 }
-.mobile-hdr{display:block}.navigation{display:none}
+.mobile-hdr{display:block}
+/* .navigation{display:none} */
 .header-toggle .top-section3 li{padding:0 0 5px 0}
 .search .stylish-input-group{display:none}#cot_tl_fixed{
 text-align:center;
@@ -1801,7 +1802,7 @@ display:none;
 background-position:97% 50%;
 }
 .nav.navbar-nav li{
-border-bottom:1px solid #b8b8b8;
+/* border-bottom:1px solid #b8b8b8; */
 width:100%;
 float:left;
 border-right:0;

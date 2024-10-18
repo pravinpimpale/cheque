@@ -396,7 +396,7 @@ span {
     float: none;
     position: relative;
     display: inline-block;
-    vertical-align: top
+    vertical-align: -webkit-baseline-middle;
 }
 
 .nav.navbar-nav.blah {
