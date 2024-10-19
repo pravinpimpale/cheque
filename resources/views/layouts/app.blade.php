@@ -50,6 +50,7 @@
     <link rel="preload" data-rocket-preload as="font" href="https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2" crossorigin>
     <link rel="preload" data-rocket-preload as="font" href="https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3jw.woff2" crossorigin>
     <link rel="preload" data-rocket-preload as="font" href="https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -64,6 +65,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/front/js/jscript_jquery_1.12.4.js') }}"></script>
     <script src="{{ asset('assets/front/js/jscript_zbootstrap.min.js') }}"></script>

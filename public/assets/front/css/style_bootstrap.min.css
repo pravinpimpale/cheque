@@ -6981,7 +6981,7 @@ button.close {
     margin-left: 16px;
   }
   .navbar-navs{
-    width: 100%;
+    width: 50%;
     justify-content: center;
     display: inline-grid;
   }
