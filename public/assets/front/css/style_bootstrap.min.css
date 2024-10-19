@@ -6975,3 +6975,14 @@ button.close {
     display: none !important;
   }
 }
+@media (max-width: 990px) {
+  .team {
+    display: flex;
+    margin-left: 16px;
+  }
+  .navbar-navs{
+    width: 100%;
+    justify-content: center;
+    display: inline-grid;
+  }
+}
