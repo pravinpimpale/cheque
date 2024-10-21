@@ -78,8 +78,7 @@
                                                             <div
                                                                 class="wpb_text_column wpb_content_element text-center enlarge">
                                                                 <div class="wpb_wrapper">
-                                                                    <p><strong>Are You a Returning
-                                                                            Customer?&nbsp;&nbsp;</strong> <a
+                                                                    <p><strong>Are you an existing customer?&nbsp;&nbsp;</strong> <a
                                                                             class="btn btn-danger btn-lg"
                                                                             title="REORDER Express Cheque Re-Order Form"
                                                                             href="https://chequesnow.ca/reorder/">Re-Order
@@ -105,7 +104,7 @@
                                                                                 <div class="wpb_wrapper">
                                                                                     <p
                                                                                         style="text-align: center !important; font-size: 18px; color: #093a7e; margin-bottom: 0 !important;">
-                                                                                        <strong>50% More Cheques
+                                                                                        <strong>25% More Cheques
                                                                                             Free!&nbsp;</strong>
                                                                                     </p>
 
@@ -147,7 +146,7 @@
                                                                             <div
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
-                                                                                    <p>Get 50% MORE cheques* when you order
+                                                                                    <p>Get 25% MORE cheques* when you order
                                                                                         Manual Business Cheques. Offering a
                                                                                         complete range of quality Manual
                                                                                         Cheques. Available in 5 different
@@ -282,7 +281,7 @@
                                                                                 <div class="wpb_wrapper">
                                                                                     <p
                                                                                         style="text-align: center !important; font-size: 18px; color: #093a7e; margin-bottom: 0 !important;">
-                                                                                        <strong>60% More Cheques
+                                                                                        <strong>25% More Cheques
                                                                                             Free!&nbsp;</strong>
                                                                                     </p>
                                                                                 </div>
@@ -337,7 +336,7 @@
                                                                             <div
                                                                                 class="wpb_text_column wpb_content_element no-mobile">
                                                                                 <div class="wpb_wrapper">
-                                                                                    <p>Get 60% MORE cheques* when you order
+                                                                                    <p>Get 25% MORE cheques* when you order
                                                                                         Personal Cheques. Pay less compared
                                                                                         to what your bank charges. Plus
                                                                                         receive AIR MILES reward miles on
@@ -365,9 +364,9 @@
                                                     <div class="vc_column-inner ">
                                                         <div class="wpb_wrapper">
                                                             <div
-                                                                class="wpb_text_column wpb_content_element text-center text-white enlarge">
+                                                                class="wpb_text_column wpb_content_element text-center text-black enlarge">
                                                                 <div class="wpb_wrapper">
-                                                                    <p><em>Not sure which cheque type is right for you?</em>
+                                                                    <p>Not sure which cheque type is right for you?
                                                                         <strong>Call us at <span
                                                                                 class="phone-number">1-866-760-2661</span></strong>
                                                                     </p><strong>

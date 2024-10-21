@@ -20,6 +20,10 @@
                                 class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55244"><a
                                     href="{{ url("laser-cheque") }}" data-ps2id-api="true">Laser Cheques</a>
                             </li>
+                            <li id="menu-item-55244"
+                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55244"><a
+                                    href="{{ url("laser-cheque") }}" data-ps2id-api="true">Personal Cheques</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

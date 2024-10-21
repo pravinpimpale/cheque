@@ -15,8 +15,8 @@
 
             </div>
             <div class="navbar-collapse navbar-main-collapse">
-                <ul class="nav navbar-nav navbar-right navbar-navs">
-                    <li class="first-nav">
+                <ul class="nav navbar-nav navbar-right navbar-navs align-items-end">
+                    <li class="topmenu first-nav">
                         <a href="/">
                             <i class="fa fa-home"></i>
                         </a>
@@ -30,7 +30,7 @@
                         data-main="includes/templates/chequesplus/images/nav-images/quickbooks-cheques.png">
                         <a class="category-top" href="{{ url('laser-cheque') }}">Laser Cheques</a>
                     </li>
-                    <li class="extrimg" data-main="">
+                    <li class="topmenu extrimg" data-main="">
                         <a class="category-top" href="/personal-cheques/order-cheques-online">Personal Cheques</a>
                     </li>
                     <li class="topmenu hasSub no-js extrimg"

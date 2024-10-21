@@ -1936,6 +1936,17 @@ tbody.collapse.in {
     margin-left: 4em !important;
 }
 
+.responsive-menu {
+    color: #000000 !important;
+    margin-right: 2em !important;
+}
+
+.navigation .nav.navbar-nav a {
+    color: #000000 !important;
+    font-weight: 600;
+    font-size: 18px !important;
+}
+
 .navbar-nav .dropdown-menu {
     position: absolute !important;
 }
@@ -1949,6 +1960,12 @@ tbody.collapse.in {
     background-color: #951213 !important;
     border-color: #951213 !important;
 }
+
+/* .topmenu {
+    border: 1px solid white !important;
+    border-top-right-radius: 13px;
+    border-top-left-radius: 13px;
+} */
 
 .navbar {
     display: block !important;
@@ -4845,9 +4862,9 @@ body .wpb_gallery_slides ul li {
 }
 
 .banner-btn {
-    color: #2e50ba;
+    color: rgb(179, 146, 122);
     background: #fff;
-    border: 3px solid #2e50ba;
+    border: 3px solid rgb(179, 146, 122);
     border-radius: 6px;
     display: block;
     font-size: 17px;
@@ -4864,8 +4881,8 @@ body .wpb_gallery_slides ul li {
 }
 
 .banner-btn:hover {
-    color: #fff;
-    background: #2e50ba
+    color: #000000;
+    background: rgb(179, 146, 122)
 }
 
 .banner-btn:after {
@@ -5006,7 +5023,11 @@ body .wpb_gallery_slides ul li {
 }
 
 .vc_custom_1569530740609 {
-    background-color: #2e50ba !important
+    background-color: rgb(179, 146, 122) !important;
+}
+
+span {
+    color: #000 !important;
 }
 
 .vc_custom_1569524700381 {
@@ -5075,7 +5096,7 @@ body {
 }
 
 a {
-    color: #003e7e;
+    color: #000;
     text-decoration: none;
     -webkit-transition: .5s;
     -moz-transition: .5s;
@@ -5118,7 +5139,7 @@ h5 a {
 
 h1 a,
 h1 a:visited {
-    color: #003e7e
+    color: #000
 }
 
 h1 a:active,
@@ -5128,7 +5149,7 @@ h1 a:hover {
 
 h2 a,
 h2 a:visited {
-    color: #003e7e
+    color: #000
 }
 
 h2 a:active,
@@ -5148,7 +5169,7 @@ h3 a:hover {
 
 h5 a,
 h5 a:visited {
-    color: #003e7e
+    color: #000
 }
 
 h5 a:active,
@@ -5160,7 +5181,7 @@ h5 a:hover {
 .vc_row-has-fill h1 a,
 .vc_row-has-fill h2,
 .vc_row-has-fill h2 a {
-    color: #fff
+    color: #000
 }
 
 .purplerow {
@@ -6295,12 +6316,12 @@ li.odd {
 }
 
 h1 {
-    color: #003e7e;
+    color: #000;
     font-size: 30px
 }
 
 h2 {
-    color: #003e7e;
+    color: #000;
     font-size: 25px
 }
 
@@ -6310,18 +6331,18 @@ h3 {
 }
 
 h5 {
-    color: #003e7e;
+    color: #000;
     font-size: 20px
 }
 
 @media screen and (max-width:1200px) {
     h1 {
-        color: #003e7e;
+        color: #000;
         font-size: 28px
     }
 
     h2 {
-        color: #003e7e;
+        color: #000;
         font-size: 19px
     }
 
@@ -6331,19 +6352,19 @@ h5 {
     }
 
     h5 {
-        color: #003e7e;
+        color: #000;
         font-size: 16px
     }
 }
 
 @media screen and (max-width:768px) {
     h1 {
-        color: #003e7e;
+        color: #000;
         font-size: 26px
     }
 
     h2 {
-        color: #003e7e;
+        color: #000;
         font-size: px
     }
 
@@ -6353,7 +6374,7 @@ h5 {
     }
 
     h5 {
-        color: #003e7e;
+        color: #000;
         font-size: px
     }
 
@@ -6605,7 +6626,7 @@ ol {
 
 .autocomplete-suggestion b {
     font-weight: 700;
-    color: #003e7e
+    color: #000
 }
 
 .autocomplete-suggestion.selected {
@@ -6619,7 +6640,7 @@ ol {
     right: 5px;
     display: none;
     z-index: 9999;
-    color: #003e7e;
+    color: #000;
     -webkit-transition: .5s;
     -moz-transition: .5s;
     -ms-transition: .5s;
@@ -7017,7 +7038,7 @@ body {
 .vc_row-has-fill h1 a,
 .vc_row-has-fill h2,
 .vc_row-has-fill h2 a {
-    color: #003e7e
+    color: #000
 }
 
 table td {
