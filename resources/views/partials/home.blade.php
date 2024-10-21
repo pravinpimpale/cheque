@@ -25,19 +25,21 @@
                                                             <div
                                                                 class="wpb_text_column wpb_content_element text-center home-banner-callout">
                                                                 <div class="wpb_wrapper">
-                                                                    <h1 style="font-size: 30px; margin-bottom: 20px">Order Bank Cheques</h1>
-                                                                    <h2 style="font-size: 18px">Business or Personal Bank Cheques.<br>
+                                                                    <h1 style="font-size: 30px; margin-bottom: 20px">Order
+                                                                        Bank Cheques</h1>
+                                                                    <h2 style="font-size: 18px">Business or Personal Bank
+                                                                        Cheques.<br>
                                                                         Order Online in under 5 minutes.<br>
                                                                         Next-Day Delivery Options.</h2>
                                                                     <p><a class="banner-btn"
                                                                             href="{{ url('manual-cheque-list/' . 1) }}">Manual
                                                                             Cheques</a> <a class="banner-btn"
-                                                                            href="{{ url("laser-cheque") }}">Laser
-                                                                            Cheques</a> 
-                                                                            {{-- <a class="banner-btn"
+                                                                            href="{{ url('laser-cheque') }}">Laser
+                                                                            Cheques</a>
+                                                                        <a class="banner-btn"
                                                                             href="https://cheques.printnow.ca/personal-cheques/">Personal
-                                                                            Cheques</a> --}}
-                                                                        </p>
+                                                                            Cheques</a>
+                                                                    </p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -82,7 +84,6 @@
                                                                             title="REORDER Express Cheque Re-Order Form"
                                                                             href="https://chequesnow.ca/reorder/">Re-Order
                                                                             Cheques Now</a></p>
-
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -176,7 +177,8 @@
                                                 <div class="wpb_column vc_column_container vc_col-sm-12">
                                                     <div class="vc_column-inner ">
                                                         <div class="wpb_wrapper">
-                                                            <div class="vc_row wpb_row vc_inner vc_row-fluid content-width">
+                                                            <div
+                                                                class="vc_row wpb_row vc_inner vc_row-fluid content-width">
                                                                 <div class="wpb_column vc_column_container vc_col-sm-6">
                                                                     <div class="vc_column-inner">
                                                                         <div class="wpb_wrapper">
@@ -184,7 +186,7 @@
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
                                                                                     <h3><a title="Laser Cheques"
-                                                                                            href="{{ url("laser-cheque") }}">Laser
+                                                                                            href="{{ url('laser-cheque') }}">Laser
                                                                                             Cheques</a></h3>
 
                                                                                 </div>
@@ -204,7 +206,7 @@
                                                                                             suppliers</em>
                                                                                     </p>
                                                                                     <p><a class="btn btn-danger btn-lg"
-                                                                                            href="{{ url("laser-cheque") }}">Order
+                                                                                            href="{{ url('laser-cheque') }}">Order
                                                                                             Now</a></p>
 
                                                                                 </div>
