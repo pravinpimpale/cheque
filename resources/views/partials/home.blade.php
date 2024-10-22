@@ -37,7 +37,7 @@
                                                                             href="{{ url('laser-cheque') }}">Laser
                                                                             Cheques</a>
                                                                         <a class="banner-btn"
-                                                                            href="https://cheques.printnow.ca/personal-cheques/">Personal
+                                                                            href="{{ url('personal-cheque') }}">Personal
                                                                             Cheques</a>
                                                                     </p>
                                                                 </div>
@@ -327,7 +327,7 @@
                                                                                 class="wpb_text_column wpb_content_element">
                                                                                 <div class="wpb_wrapper">
                                                                                     <h3><a title="Personal Cheques"
-                                                                                            href="#">Personal
+                                                                                            href="{{ url('personal-cheque') }}">Personal
                                                                                             Cheques</a></h3>
 
                                                                                 </div>
@@ -345,7 +345,7 @@
                                                                                             suppliers</em>
                                                                                     </p>
                                                                                     <p><a class="btn btn-danger btn-lg"
-                                                                                            href="#">Order
+                                                                                            href="{{ url('personal-cheque') }}">Order
                                                                                             Now</a></p>
                                                                                 </div>
                                                                             </div>

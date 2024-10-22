@@ -31,7 +31,7 @@
                         <a class="category-top" href="{{ url('laser-cheque') }}">Laser Cheques</a>
                     </li>
                     <li class="topmenu extrimg" data-main="">
-                        <a class="category-top" href="/personal-cheques/order-cheques-online">Personal Cheques</a>
+                        <a class="category-top" href="{{ url('personal-cheque') }}">Personal Cheques</a>
                     </li>
                     <li class="topmenu hasSub no-js extrimg"
                         data-main="includes/templates/chequesplus/images/nav-images/quickbooks-cheques.png">
