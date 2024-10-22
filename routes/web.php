@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LaserChequeController;
 use App\Http\Controllers\ManualChequeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PersonalChequeController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -44,6 +45,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 Route::get('/manual-cheque', [ManualChequeController::class, 'index'])->name('manual-cheque');
 
 Route::get('/laser-cheque', [LaserChequeController::class, 'index'])->name('laser-cheque');
+
+Route::get('/personal-cheque', [PersonalChequeController::class, 'index'])->name('personal-cheque');
 
 Route::get('/cheque-list', [ChequeCategoriesController::class, 'index'])->name('cheque-list');
 

@@ -47,16 +47,20 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/front/css/skin.css') }}" />
     <link rel="stylesheet" src="{{ asset('assets/front/css/jquery_bxslider.css') }}">
 
-    <link rel="preload" data-rocket-preload as="font" href="https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2" crossorigin>
-    <link rel="preload" data-rocket-preload as="font" href="https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3jw.woff2" crossorigin>
-    <link rel="preload" data-rocket-preload as="font" href="https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2" crossorigin>
+    <link rel="preload" data-rocket-preload as="font"
+        href="https://use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2" crossorigin>
+    <link rel="preload" data-rocket-preload as="font"
+        href="https://fonts.gstatic.com/s/nunito/v26/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshdTQ3jw.woff2" crossorigin>
+    <link rel="preload" data-rocket-preload as="font"
+        href="https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVI.woff2"
+        crossorigin>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="content-wrapper">
         <div class="wrapper">
-            @include('partials.header')
+                @include('partials.header')
 
             <div class="container">
                 @yield('content')
