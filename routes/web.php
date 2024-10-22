@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LaserChequeController;
 use App\Http\Controllers\ManualChequeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\AboutusController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
@@ -67,6 +68,6 @@ Route::post('customer', [CustomerController::class, 'store'])->name('customer.st
 Route::get('manual-cheque-list/{id}', [ManualChequeController::class, 'show'])->name('manual-cheque-list');
 Route::get('laser-cheque-list/{id}', [LaserChequeController::class, 'show'])->name('laser-cheque-list');
 
-
+Route::get('computerCheques', [AboutusController::class, 'index']);
 
 require __DIR__.'/auth.php';
