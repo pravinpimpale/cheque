@@ -35,7 +35,7 @@
                     </li>
                     <li class="topmenu hasSub no-js extrimg"
                         data-main="includes/templates/chequesplus/images/nav-images/quickbooks-cheques.png">
-                        <a class="category-top" href="/computerCheques">About Us</a>
+                        <a class="category-top" href="{{ url('about-us') }}">About Us</a>
                     </li>
                     <li class="topmenu hasSub no-js extrimg dropdown" data-main="">
                         <a href="login" class="my-auto category-top dropdown-toggle" type="button"
