@@ -42,7 +42,7 @@
                             id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-user fa-2x"></i>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu py-0" aria-labelledby="dropdownMenuButton">
                             <ul>
                                 @guest
                                 <li><a class="dropdown-item" href="/login">Login</a></li>
