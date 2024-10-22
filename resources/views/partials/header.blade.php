@@ -47,16 +47,16 @@
                                 @guest
                                 <li><a class="dropdown-item" href="/login">Login</a></li>
                                 @endguest
+                                @if (Auth::check() && Auth::user()->role === 'vendor' || Auth::user()->role === 'admin')
                                 <li>
-                                    @if (Auth::check() && Auth::user()->role === 'vendor')
                                     <a class="dropdown-item" href="{{ url('/customer-history') }}">Customers</a>
-                                    @endif
                                 </li>
+                                @endif
+                                @if (Auth::check() && Auth::user()->role === 'vendor' || Auth::user()->role === 'admin')
                                 <li>
-                                    @if (Auth::check() && Auth::user()->role === 'vendor')
                                     <a class="dropdown-item" href="{{ url('/order-history') }}">Orders</a>
-                                    @endif
                                 </li>
+                                @endif
                                 @auth
                                 <li>
                                     <a class="category-top text-decoration-none dropdown-item" href="#"
@@ -82,15 +82,15 @@
     function team() {
         const navbarCollapse = document.querySelector('.navbar-collapse');
 
-  if (navbarCollapse) {
-    // If navbar-collapse exists, remove it
-    navbarCollapse.classList.toggle('navbar-collapse');
-  } else {
-    // If navbar-collapse doesn't exist, add it to the first element with the class "navbar-collapse"
-    const navbar = document.querySelector('.navbar-main-collapse');
-    if (navbar) {
-      navbar.classList.add('navbar-collapse');
-    }
-  }
+        if (navbarCollapse) {
+            // If navbar-collapse exists, remove it
+            navbarCollapse.classList.toggle('navbar-collapse');
+        } else {
+            // If navbar-collapse doesn't exist, add it to the first element with the class "navbar-collapse"
+            const navbar = document.querySelector('.navbar-main-collapse');
+            if (navbar) {
+                navbar.classList.add('navbar-collapse');
+            }
+        }
     }
 </script>

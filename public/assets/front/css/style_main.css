@@ -1052,7 +1052,7 @@ span {
 }
 
 .navigation .nav.navbar-nav li ul li {
-    float: left;
+    /* float: left; */
     margin-bottom: 9px;
     width: 100%
 }
