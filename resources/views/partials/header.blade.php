@@ -47,12 +47,12 @@
                                 @guest
                                 <li><a class="dropdown-item" href="/login">Login</a></li>
                                 @endguest
-                                @if (Auth::check() && in_array(Auth::user()->role, ['vendor', 'admin']))
+                                @if (Auth::check() && in_array(Auth::user()->role, ['vendor', 'admin','customer']))
                                 <li>
                                     <a class="dropdown-item" href="{{ url('/customer-history') }}">Customers</a>
                                 </li>
                                 @endif
-                                @if (Auth::check() && in_array(Auth::user()->role, ['vendor', 'admin']))
+                                @if (Auth::check() && in_array(Auth::user()->role, ['vendor', 'admin','customer']))
                                 <li>
                                     <a class="dropdown-item" href="{{ url('/order-history') }}">Orders</a>
                                 </li>
