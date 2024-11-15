@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PersonalCheque;
+use App\Models\Customer;
 use App\Models\ChequeCategories;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -72,17 +73,33 @@ class PersonalChequeController extends Controller
      */
     public function show($id)
     {
-        // Find the cheque categories by manual_cheque_id
-        $chequeList = ChequeCategories::where('personal_cheque_id', $id)->get();
+        // // Find the cheque categories by manual_cheque_id
+        // $chequeList = ChequeCategories::where('personal_cheque_id', $id)->get();
 
-        // Set the cheque category name statically
-        $chequeCategoryName = 'Personal Cheques';
+        // // Set the cheque category name statically
+        // $chequeCategoryName = 'Personal Cheques';
 
-        // Retrieve only the categoriesName from ManualCheque
-        $chequeSubCategoryName = PersonalCheque::where('id', $id)->pluck('categoriesName')->first();
+        // // Retrieve only the categoriesName from ManualCheque
+        // $chequeSubCategoryName = PersonalCheque::where('id', $id)->pluck('categoriesName')->first();
+        $chequeList = PersonalCheque::findOrFail($id);
+        // return $chequeList;
+        $customers = Customer::all();
+
+        // Determine the category and subcategory names
+        if ($chequeList->personal_cheque_id) {
+            $chequeCategoryName = 'Personal Cheques';
+            $chequeSubCategoryName = PersonalCheque::where('id', $chequeList->personal_cheque_id)->pluck('categoriesName')->first();
+        } else {
+            $chequeCategoryName = 'Laser Cheques';
+            $chequeSubCategoryName = PersonalCheque::where('id', $chequeList->laser_cheque_id)->pluck('categoriesName')->first();
+         
+        }
+
+        // Pass the cheque category data to the view
+        return view('partials/personalChequeList', compact('chequeList', 'chequeCategoryName', 'chequeSubCategoryName', 'customers'));
 
         // Pass the cheque, chequeCategoryName, and chequeSubCategoryName to the view
-        return view('partials/chequesList', compact('chequeList', 'chequeCategoryName', 'chequeSubCategoryName'));
+        // return view('partials/personalChequeList', compact('chequeList', 'chequeCategoryName', 'chequeSubCategoryName'));
     }
 
     /**
